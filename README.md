@@ -5,9 +5,6 @@
 > were previously genotyped on the 60K Beadchip, while the remaining 2 Yorkshire
 > have whole genome sequence data.
 
-[**identify_candidates**](./identify_candidates/identify_candidates.md)
-Selection of animals for 650K project
-
 [**SNP_inspection**](./snp_inspection/snp_inspection.md)
 Inspection of 650K SNP map
 
