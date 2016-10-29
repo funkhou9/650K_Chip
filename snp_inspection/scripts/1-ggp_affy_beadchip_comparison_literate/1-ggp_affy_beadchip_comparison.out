@@ -1,0 +1,141 @@
+
+
+processing file: 1-ggp_affy_beadchip_comparison.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |..                                                               |   3%
+  ordinary text without R code
+
+  |                                                                         |....                                                             |   6%
+label: unnamed-chunk-1
+  |                                                                         |......                                                           |  10%
+  ordinary text without R code
+
+  |                                                                         |........                                                         |  13%
+label: unnamed-chunk-2
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |.............                                                    |  19%
+label: unnamed-chunk-3
+  |                                                                         |...............                                                  |  23%
+  ordinary text without R code
+
+  |                                                                         |.................                                                |  26%
+label: unnamed-chunk-4
+  |                                                                         |...................                                              |  29%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  32%
+label: unnamed-chunk-5
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+  |                                                                         |.........................                                        |  39%
+label: unnamed-chunk-6
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  45%
+label: unnamed-chunk-7
+  |                                                                         |...............................                                  |  48%
+  ordinary text without R code
+
+  |                                                                         |..................................                               |  52%
+label: unnamed-chunk-8
+  |                                                                         |....................................                             |  55%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: unnamed-chunk-9
+  |                                                                         |........................................                         |  61%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  65%
+label: unnamed-chunk-10
+  |                                                                         |............................................                     |  68%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unnamed-chunk-11
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+  |                                                                         |..................................................               |  77%
+label: unnamed-chunk-12
+  |                                                                         |....................................................             |  81%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: unnamed-chunk-13
+  |                                                                         |.........................................................        |  87%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  90%
+label: unnamed-chunk-14
+  |                                                                         |.............................................................    |  94%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  97%
+label: unnamed-chunk-15
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: 1-ggp_affy_beadchip_comparison.md
+
+Job Id: 36484472.mgr-04.i
+    Job_Name = 1-ggp_affy_beadchip_comparison
+    Job_Owner = funkhou9@dev-intel16.i
+    resources_used.cput = 00:00:17
+    resources_used.energy_used = 0
+    resources_used.mem = 487208kb
+    resources_used.vmem = 926520kb
+    resources_used.walltime = 00:00:22
+    job_state = R
+    queue = main
+    server = mgr-04.i
+    Checkpoint = u
+    ctime = Tue Oct 25 16:12:58 2016
+    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/snp_inspection
+	/scripts/1-ggp_affy_beadchip_comparison_literate/1-ggp_affy_beadchip_c
+	omparison.out
+    exec_host = lac-056/27
+    Hold_Types = n
+    Join_Path = oe
+    Keep_Files = n
+    Mail_Points = abe
+    mtime = Tue Oct 25 16:14:10 2016
+    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/snp_inspectio
+	n/scripts/1-ggp_affy_beadchip_comparison_literate/1-ggp_affy_beadchip_
+	comparison.out
+    Priority = 0
+    qtime = Tue Oct 25 16:12:58 2016
+    Rerunable = False
+    Resource_List.mem = 8gb
+    Resource_List.nodect = 1
+    Resource_List.nodes = 1:ppn=1:intel16
+    Resource_List.walltime = 00:20:00
+    session_id = 24809
+    Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
+	PBS_O_LOGNAME=funkhou9,
+	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
+	ols/bin:/opt/software/Stata/13.0:/opt/software/MATLAB/R2014a/bin:/opt/
+	software/Python/2.7.2--GCC-4.4.5/bin:/opt/software/cmake/2.8.5--GCC-4.
+	4.5/bin:/opt/software/OpenMPI/1.4.3--GCC-4.4.5/bin:/usr/lib64/qt-3.3/b
+	in:/opt/software/lmod/bin:/opt/moab/bin:/usr/local/bin:/bin:/usr/bin:/
+	usr/local/sbin:/usr/sbin:/sbin:/usr/local/hpcc/bin:/opt/ibutils/bin:/m
+	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
+	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
+	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/snp_inspection/scrip
+	ts,PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
+    euser = funkhou9
+    egroup = gen
+    queue_type = E
+    etime = Tue Oct 25 16:12:58 2016
+    submit_args = base.sh
+    start_time = Tue Oct 25 16:14:10 2016
+    Walltime.Remaining = 1149
+    start_count = 1
+    fault_tolerant = False
+    job_radix = 0
+    submit_host = dev-intel16.i
+
