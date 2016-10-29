@@ -152,37 +152,37 @@ label: unnamed-chunk-29
 
 output file: 3-compare_calls.md
 
-Job Id: 36657999.mgr-04.i
+Job Id: 36658992.mgr-04.i
     Job_Name = 3-compare_calls
     Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:00:11
+    resources_used.cput = 00:00:02
     resources_used.energy_used = 0
-    resources_used.mem = 1737548kb
-    resources_used.vmem = 2176712kb
-    resources_used.walltime = 00:00:14
+    resources_used.mem = 762732kb
+    resources_used.vmem = 1629336kb
+    resources_used.walltime = 00:00:06
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Sat Oct 29 17:10:18 2016
+    ctime = Sat Oct 29 17:38:37 2016
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_analy
 	sis/scripts/3-compare_calls_literate/3-compare_calls.out
-    exec_host = lac-358/26
+    exec_host = lac-349/25
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Sat Oct 29 17:11:03 2016
+    mtime = Sat Oct 29 17:39:37 2016
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_anal
 	ysis/scripts/3-compare_calls_literate/3-compare_calls.out
     Priority = 0
-    qtime = Sat Oct 29 17:10:18 2016
+    qtime = Sat Oct 29 17:38:37 2016
     Rerunable = False
     Resource_List.mem = 8gb
     Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:20:00
-    session_id = 10770
+    session_id = 9272
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -198,10 +198,10 @@ Job Id: 36657999.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Sat Oct 29 17:10:18 2016
+    etime = Sat Oct 29 17:38:37 2016
     submit_args = base.sh
-    start_time = Sat Oct 29 17:11:03 2016
-    Walltime.Remaining = 1077
+    start_time = Sat Oct 29 17:39:37 2016
+    Walltime.Remaining = 1126
     start_count = 1
     fault_tolerant = False
     job_radix = 0

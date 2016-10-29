@@ -144,11 +144,13 @@ fits <- mapply(function(y, x) lm(y ~ x),
                as.data.frame(illum_calls),
                as.data.frame(affy_calls))
 
-#' Tabulate marker name, "x coefficient", and standard error
-coef_se_r2 <- lapply(fits,
-                 function(x) {
-                     c(summary(x)$coefficients[2, 1:2], summary(x)$r.squared)
-                 })
+#' Tabulate marker name, "x coefficient", and standard error.
+#' Warnings of "essentially perfect fits". Ignore these to avoid
+#' thousands of lines of output.
+suppressWarnings({coef_se_r2 <- lapply(fits,
+                     function(x) {
+                         c(summary(x)$coefficients[2, 1:2], summary(x)$r.squared)
+                     })})
 results <- do.call(rbind, coef_se_r2)
 
 #' ### Estimate GWBC of animal
