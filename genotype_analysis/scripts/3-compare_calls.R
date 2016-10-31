@@ -14,7 +14,6 @@
 #'   - [Filter data](#filter-data)
 #'   - [Regression](#regression)
 #'   - [Estimate GWBC of animal](#estimate-gwbc-of-animal)
-#' 5. [Visualize](#visualize)
 
 setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 
@@ -34,6 +33,7 @@ setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 #' ## Install libraries
 library(devtools)
 library(magrittr)
+library(ggplot2)
 
 #' Install [snpTools](https://github.com/funkhou9/snpTools/commit/6603afd1db77fb6a93ece38b4a3eeafc7fbc92f2)
 # install_github("funkhou9/snpTools")
@@ -121,14 +121,15 @@ idx3 <- apply(affy_calls, 2,
                   sum(!is.na(x)) / length(x) >= 0.9
               })
 
-#' Identify markers that are unfixed in both datasets
+#' Identify markers that are unfixed in both datasets (For a single SNP, at
+#' two animals must have differing conclusive genotype calls)
 idx4 <- apply(illum_calls, 2,
               function(x) {
-                  length(unique(x)) > 1
+                  length(unique(x[!is.na(x)])) > 1
               })
 idx5 <- apply(affy_calls, 2,
               function(x) {
-                  length(unique(x)) > 1
+                  length(unique(x[!is.na(x)])) > 1
               })
 
 #' Keep only SNPs that have sufficient call rate in both datasets and
@@ -147,15 +148,108 @@ fits <- mapply(function(y, x) lm(y ~ x),
 #' Tabulate marker name, "x coefficient", and standard error.
 #' Warnings of "essentially perfect fits". Ignore these to avoid
 #' thousands of lines of output.
-suppressWarnings({coef_se_r2 <- lapply(fits,
+suppressWarnings({int_slope_r2 <- lapply(fits,
                      function(x) {
-                         c(summary(x)$coefficients[2, 1:2], summary(x)$r.squared)
+                         c("intercept" = summary(x)$coefficients[1, 1],
+                           "slope" = summary(x)$coefficients[2, 1],
+                           "R2" = summary(x)$r.squared)
                      })})
-results <- do.call(rbind, coef_se_r2)
+results <- as.data.frame(do.call(rbind, int_slope_r2))
+
+#' How many SNPs out of 30,941 in `results` have a slope of exactly 1 and R2 of
+#' exactly 1?
+nrow(results[results$slope == 1 & results$R2 == 1, ])
+
+#' Add 4th column, a logical vector that is `TRUE` if the SNP is currently used
+#' in GWBC calculation.
+results <- cbind(results, "GWBC" = rownames(results) %in% rownames(GWBC_ref_B))
+
+#' Plot joint distribution of coefficient estimates (slopes) and R squared values across
+#' all models. Highlight interesting points that deserve further investigation.
+ggplot(results, aes(x = R2, y = slope, color = GWBC)) +
+    geom_point(size = 2.5, alpha = 0.4) +
+    geom_point(aes(x = 1, y = 0.5), size = 10, shape = 1, color = "red") +
+    geom_point(aes(x = 1, y = -1), size = 10, shape = 1, color = "darkgreen") +
+    geom_point(aes(x = 0, y = 0), size = 10, shape = 1, color = "blue")
+
+#' The data suggests that for those SNPs used to compute GWBC, no transformation
+#' of Affy coding to Illumina coding is needed.
+#' Any models where the estimated slope is above 0.5 may indicate that
+#' both Affy and Illumina platforms are counting the same allele, but genotyping
+#' errors (or the possibility that the platforms are counting slightly different
+#' loci) may prevent the estimated coefficients to be 1.0.
+
+#' From each of the **red**, **blue**, and **green** points highlighted in the
+#' above plot, provide a contingency table of genotype calls.
+#'
+#' For the **red** points (points with roughly 0.5 slope and near perfect R2):
+results[round(results$R2, 1) == 1 & round(results$slope, 1) == 0.5, ]
+
+#' Examples of genotypes for this set of markers:
+table(fits$ALGA0002747$model)
+table(fits$ALGA0004678$model)
+table(fits$H3GA0002791$model)
+table(fits$ASGA0065768$model)
+
+#' For the **blue** points (points that have near-zero R2 values)
+results[results$R2 < 0.05, ]
+
+#' Examples of genotypes for this set of markers:
+table(fits$ASGA0096844$model)
+table(fits$ALGA0028021$model)
+table(fits$DRGA0008687$model)
+table(fits$ALGA0081437$model)
+
+#' For the **green** points (points that have near -1 slope)
+results[results$slope < -0.75, ]
+
+#' Examples of genotypes for this set of markers:
+table(fits$DRGA0000277$model)
+table(fits$M1GA0026765$model)
+table(fits$CASI0000302$model)
+table(fits$M1GA0025413$model)
+
+#' Plot joint distribution of slopes and intercepts fitted across all models.
+#' Highlight interesting points that deserve further investigation.
+ggplot(results, aes(x = intercept, y = slope, color = GWBC)) +
+    geom_point(size = 2.5, alpha = 0.4) +
+    geom_point(aes(x = 1, y = 0.5), size = 10, shape = 1, color = "red") +
+    geom_point(aes(x = 0, y = 0.5), size = 10, shape = 1, color = "darkgreen") +
+    geom_point(aes(x = 2, y = -1), size = 10, shape = 1, color = "blue")
+
+#' From each of the **red**, **blue**, and **green** points highlighted in the
+#' above plot, provide a contingency table of genotype calls.
+#'
+#' For the **red** points(slope near 0.5 and intercept near 1.0):
+results[round(results$intercept, 1) == 1 & round(results$slope, 1) == 0.5, ]
+
+#' Examples of genotypes for this set of markers:
+table(fits$ALGA0002747$model)
+table(fits$ALGA0004678$model)
+table(fits$MARC0073315$model)
+table(fits$ASGA0006216$model)
+
+#' For the **green** points(slope near 0.5 and intercept near 0.0):
+results[round(results$intercept, 1) == 0 & round(results$slope, 1) == 0.5, ]
+
+#' Examples of genotypes for this set of markers:
+table(fits$ASGA0003370$model)
+table(fits$H3GA0002791$model)
+table(fits$MARC0082076$model)
+table(fits$H3GA0005011$model)
+
+#' For the **blue** points(slope near 0.5 and intercept near 0.0):
+results[round(results$intercept, 1) == 2 & round(results$slope, 1) == -1, ]
+
+#' Examples of genotypes for this set of markers:
+table(fits$DRGA0000277$model)
+table(fits$M1GA0000883$model)
+table(fits$ASGA0003027$model)
+table(fits$ASGA0003043$model)
 
 #' ### Estimate GWBC of animal
 #' From `2-PCA.R`, I know that animal `a550588-4269754-110716-107_F06.CEL`
-#' has clusters much closer with Yorkshire genotyped on the Affy chip
+#' clusters much closer with Yorkshire genotyped on the Affy chip
 #'
 #' Isoloate this "suspect Landrace" animal and compute its GWBC
 #' based on the reference panel that has been previously developed
@@ -171,28 +265,6 @@ names(sus_landrace) <- illum_markers[idx]
 #' GWBC
 sus_landrace <- sus_landrace[names(sus_landrace) %in% rownames(GWBC_ref_B)]
 
-#' Keep only SNPs that have models in `fits`
-sus_landrace <- sus_landrace[names(sus_landrace) %in% names(fits)]
-
-#' Transform each SNP according to model fit provided in `fits`.
-trans_geno <- c()
-for (i in 1:length(sus_landrace)) {
-    # Obtain ith marker name
-    marker <- names(sus_landrace)[i]
-    # Convert ith marker using model in fits[[marker]]
-    trans_geno[i] <-
-        fits[[marker]]$coefficients[1] + (fits[[marker]]$coefficients[2] * sus_landrace[i])
-}
-names(trans_geno) <- names(sus_landrace)
-
-
 #' Use `breedTools` to estimate GWBC of suspect landrace animal using transformed
 #' genotypes
-breedTools:::QPsolve(trans_geno, GWBC_ref_B)
-
-#' ## Visualize
-#' Joint distribution of coefficient estimates and R squared values
-plot(results[, 3],
-     results[, 1],
-     xlab = "R squared",
-     ylab = "Coefficient estimate")
+breedTools:::QPsolve(sus_landrace, GWBC_ref_B)
