@@ -13,6 +13,7 @@
 #' 4. [Analysis](#analysis)
 #'   - [Filter data](#filter-data)
 #'   - [Regression](#regression)
+#'   - [Allele frequencies](#allele-frequencies)
 #'   - [Estimate GWBC of animal](#estimate-gwbc-of-animal)
 
 setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
@@ -183,7 +184,7 @@ ggplot(results, aes(x = R2, y = slope, color = GWBC)) +
 #' above plot, provide a contingency table of genotype calls.
 #'
 #' For the **red** points (points with roughly 0.5 slope and near perfect R2):
-results[round(results$R2, 1) == 1 & round(results$slope, 1) == 0.5, ]
+head(results[round(results$R2, 1) == 1 & round(results$slope, 1) == 0.5, ])
 
 #' Examples of genotypes for this set of markers:
 table(fits$ALGA0002747$model)
@@ -192,7 +193,7 @@ table(fits$H3GA0002791$model)
 table(fits$ASGA0065768$model)
 
 #' For the **blue** points (points that have near-zero R2 values)
-results[results$R2 < 0.05, ]
+head(results[results$R2 < 0.05, ])
 
 #' Examples of genotypes for this set of markers:
 table(fits$ASGA0096844$model)
@@ -201,7 +202,7 @@ table(fits$DRGA0008687$model)
 table(fits$ALGA0081437$model)
 
 #' For the **green** points (points that have near -1 slope)
-results[results$slope < -0.75, ]
+head(results[results$slope < -0.75, ])
 
 #' Examples of genotypes for this set of markers:
 table(fits$DRGA0000277$model)
@@ -221,7 +222,7 @@ ggplot(results, aes(x = intercept, y = slope, color = GWBC)) +
 #' above plot, provide a contingency table of genotype calls.
 #'
 #' For the **red** points(slope near 0.5 and intercept near 1.0):
-results[round(results$intercept, 1) == 1 & round(results$slope, 1) == 0.5, ]
+head(results[round(results$intercept, 1) == 1 & round(results$slope, 1) == 0.5, ])
 
 #' Examples of genotypes for this set of markers:
 table(fits$ALGA0002747$model)
@@ -230,7 +231,7 @@ table(fits$MARC0073315$model)
 table(fits$ASGA0006216$model)
 
 #' For the **green** points(slope near 0.5 and intercept near 0.0):
-results[round(results$intercept, 1) == 0 & round(results$slope, 1) == 0.5, ]
+head(results[round(results$intercept, 1) == 0 & round(results$slope, 1) == 0.5, ])
 
 #' Examples of genotypes for this set of markers:
 table(fits$ASGA0003370$model)
@@ -239,13 +240,35 @@ table(fits$MARC0082076$model)
 table(fits$H3GA0005011$model)
 
 #' For the **blue** points(slope near 0.5 and intercept near 0.0):
-results[round(results$intercept, 1) == 2 & round(results$slope, 1) == -1, ]
+head(results[round(results$intercept, 1) == 2 & round(results$slope, 1) == -1, ])
 
 #' Examples of genotypes for this set of markers:
 table(fits$DRGA0000277$model)
 table(fits$M1GA0000883$model)
 table(fits$ASGA0003027$model)
 table(fits$ASGA0003043$model)
+
+#' ### Allele frequencies
+#' Plot differences in allele frequencies for all SNPs.
+#'
+#' Allele frequency calculation exists in the `breedTools` package. It requires
+#' *currently* supplying a list as the second argument, `populations`, which
+#' will specify the IDs in a particular population that you wish to calculate
+#' allele frequencies with. For the purposes of estimating allele frequencies
+#' from all individuals in a matrix, this function is a little cumbersome.
+illum_freq <-
+    breedTools::allele_freq(geno = illum_calls,
+                            populations = list("Illumina" = rownames(illum_calls)))
+affy_freq <-
+    breedTools::allele_freq(geno = affy_calls,
+                            populations = list("Affy" = rownames(affy_calls)))
+allele_frequencies <- as.data.frame(cbind(illum_freq, affy_freq))
+
+#+ dpi=300
+ggplot(allele_frequencies, aes(x = Illumina, y = Affy)) +
+    geom_point() +
+    labs(x = "Illumina allele frequencies",
+         y = "Affymetrix allele frequencies")
 
 #' ### Estimate GWBC of animal
 #' From `2-PCA.R`, I know that animal `a550588-4269754-110716-107_F06.CEL`
