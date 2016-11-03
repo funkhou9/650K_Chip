@@ -242,6 +242,13 @@ array_ids$Yorkshire <-
     plate1_wells$Best.Array[plate1_wells$Sample.Status == "Pass"]
 ```
 
+Add Yorkshires from `plate2` using the last 8 elements in `plate2_wells$Best.Array`
+
+
+```r
+array_ids$Yorkshire <- c(array_ids$Yorkshire, plate2_wells$Best.Array[89:96])
+```
+
 Combine genotyping datasets into one data.frame `affy_geno`, which will have
 probe IDs as colnames, animal names as rownames;
 likewise SNPs in columns, and animals in rows.

@@ -118,17 +118,9 @@ for (i in rownames(affy_geno)) {
             breeds[i] <- names(array_ids)[j]
     }
 }
-# Remove names, which are automatically generated from the for loop
+# Remove names, which are automatically generated from the for loop and append
+# breeds to eigenvectors
 breeds <- unname(breeds)
-```
-
-Label the last 8 animals without breed information in `array_ids` with
-"FAANG Yorkshire" and "Yorkshire" to distinguish animals from FAANG project
-from which we have WGS data.
-
-
-```r
-breeds <- c(breeds, rep("FAANG Yorkshire", 2), rep("Yorkshire", 6))
 pcs <- cbind(breeds, pcs)
 ```
 
@@ -140,7 +132,7 @@ ggplot(pcs, aes(x = PC1, y = PC2, color = breeds)) +
     geom_point(size = 3, alpha = 0.7)
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png)
 
 One of the Landrace samples clusters with the Yorkshire. Which animal is this?
 
