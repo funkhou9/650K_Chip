@@ -12,3 +12,6 @@ commonly used pig SNP chips.
 [**genotype_analysis**](./genotype_analysis/genotype_analysis.md)
 Loading 650K genotypes, data cleaning, inspection of variation with PCA plots,
 comparisons of genotype calls across genotyping platforms, etc.
+
+[**ld_estimation**](./ld_estimation/ld_estimation.md)
+Phasing of 650K genotypes and LD calculations.
