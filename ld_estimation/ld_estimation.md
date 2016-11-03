@@ -10,4 +10,5 @@ Using wrappers in `snpTools`, phase genotypes with FImpute software for all chro
 within each breed and store the result for downstream LD calculations.
 
 [**2-process_haplotypes.R**](./scripts/2-process_haplotypes_literate/2-process_haplotypes.md)
-Loads haplotypes phased in the previous script...
+Loads haplotypes phased in the previous script and saves results as a data.frame
+to disk
