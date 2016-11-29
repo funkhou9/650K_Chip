@@ -12,3 +12,6 @@ within each breed and store the result for downstream LD calculations.
 [**2-process_haplotypes.R**](./scripts/2-process_haplotypes_literate/2-process_haplotypes.md)
 Loads haplotypes phased in the previous script and saves results as a data.frame
 to disk
+
+[**3-ld_calc.R**](./scripts/3-ld_calc_literate/3-ld_calc.md)
+Calculates pairwise distances and correlations between SNPs

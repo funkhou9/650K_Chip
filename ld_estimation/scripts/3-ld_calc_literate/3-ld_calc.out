@@ -1,0 +1,118 @@
+
+
+processing file: 3-ld_calc.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |...                                                              |   5%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |  10%
+label: unnamed-chunk-1
+  |                                                                         |.........                                                        |  14%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  19%
+label: unnamed-chunk-2
+  |                                                                         |...............                                                  |  24%
+  ordinary text without R code
+
+  |                                                                         |...................                                              |  29%
+label: unnamed-chunk-3
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.........................                                        |  38%
+label: unnamed-chunk-4
+  |                                                                         |............................                                     |  43%
+  ordinary text without R code
+
+  |                                                                         |...............................                                  |  48%
+label: unnamed-chunk-5
+  |                                                                         |..................................                               |  52%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  57%
+label: unnamed-chunk-6 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ results: chr "asis"
+
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-7
+  |                                                                         |..............................................                   |  71%
+  ordinary text without R code
+
+  |                                                                         |..................................................               |  76%
+label: unnamed-chunk-8
+  |                                                                         |.....................................................            |  81%
+  ordinary text without R code
+
+  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-9
+  |                                                                         |...........................................................      |  90%
+  ordinary text without R code
+
+  |                                                                         |..............................................................   |  95%
+label: unnamed-chunk-10
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: 3-ld_calc.md
+
+Job Id: 37501434.mgr-04.i
+    Job_Name = 3-ld_calc
+    Job_Owner = funkhou9@dev-intel16.i
+    resources_used.cput = 00:01:35
+    resources_used.energy_used = 0
+    resources_used.mem = 37467952kb
+    resources_used.vmem = 42607436kb
+    resources_used.walltime = 00:01:42
+    job_state = R
+    queue = main_large
+    server = mgr-04.i
+    Checkpoint = u
+    ctime = Tue Nov 29 13:56:20 2016
+    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
+	scripts/3-ld_calc_literate/3-ld_calc.out
+    exec_host = lac-257/0
+    Hold_Types = n
+    Join_Path = oe
+    Keep_Files = n
+    Mail_Points = abe
+    mtime = Tue Nov 29 13:57:38 2016
+    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
+	/scripts/3-ld_calc_literate/3-ld_calc.out
+    Priority = 0
+    qtime = Tue Nov 29 13:57:30 2016
+    Rerunable = False
+    Resource_List.mem = 300gb
+    Resource_List.nodect = 1
+    Resource_List.nodes = 1:ppn=1:intel16
+    Resource_List.walltime = 03:00:00
+    session_id = 15378
+    Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
+	PBS_O_LOGNAME=funkhou9,
+	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
+	ols/bin:/opt/software/Stata/13.0:/opt/software/MATLAB/R2014a/bin:/opt/
+	software/Python/2.7.2--GCC-4.4.5/bin:/opt/software/cmake/2.8.5--GCC-4.
+	4.5/bin:/opt/software/OpenMPI/1.4.3--GCC-4.4.5/bin:/usr/lib64/qt-3.3/b
+	in:/opt/software/lmod/bin:/opt/moab/bin:/usr/local/bin:/bin:/usr/bin:/
+	usr/local/sbin:/usr/sbin:/sbin:/usr/local/hpcc/bin:/opt/ibutils/bin:/m
+	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
+	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
+	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/script
+	s,PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
+    euser = funkhou9
+    egroup = gen
+    queue_type = E
+    etime = Tue Nov 29 13:56:20 2016
+    submit_args = base.sh
+    start_time = Tue Nov 29 13:57:38 2016
+    Walltime.Remaining = 10646
+    start_count = 1
+    fault_tolerant = False
+    job_radix = 0
+    submit_host = dev-intel16.i
+
