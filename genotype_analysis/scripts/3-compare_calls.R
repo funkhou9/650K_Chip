@@ -14,7 +14,7 @@
 #'   - [Filter data](#filter-data)
 #'   - [Regression](#regression)
 #'   - [Allele frequencies](#allele-frequencies)
-#'   - [Estimate GWBC of animal](#estimate-gwbc-of-animal)
+#' 
 
 setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 
@@ -25,10 +25,6 @@ setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 #' may be loaded from the `SF_PG_Industry` project
 #' 2. For each SNP genotyped on both Illumina 60K and Affymetrix 650K platforms,
 #' test genotype call consistancy using a linear regression.
-#' 3. As seen in `2-PCA.R`, one Landrace animal resembles Yorkshire
-#' much more than Landrace. Use common SNPs between Illumina and
-#' Affy platforms to estimate the genome-wide breed composition (GWBC)
-#' of the animal (*see `SF_PG_Industry`*)
 #'
 
 #' ## Install libraries
@@ -264,30 +260,8 @@ affy_freq <-
                             populations = list("Affy" = rownames(affy_calls)))
 allele_frequencies <- as.data.frame(cbind(illum_freq, affy_freq))
 
-#+ dpi=300
+#+ dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(allele_frequencies, aes(x = Illumina, y = Affy)) +
     geom_point() +
     labs(x = "Illumina allele frequencies",
          y = "Affymetrix allele frequencies")
-
-#' ### Estimate GWBC of animal
-#' From `2-PCA.R`, I know that animal `a550588-4269754-110716-107_F06.CEL`
-#' clusters much closer with Yorkshire genotyped on the Affy chip
-#'
-#' Isoloate this "suspect Landrace" animal and compute its GWBC
-#' based on the reference panel that has been previously developed
-#' for the National Swine Registry and used in `SF_PG_Industry`.
-sus_landrace <- affy_geno["a550588-4269754-110716-107_F06.CEL", ]
-
-#' Keep only SNPs present on the Illumina platform and convert to
-#' Illumina names
-sus_landrace <- sus_landrace[affy_markers[idx]]
-names(sus_landrace) <- illum_markers[idx]
-
-#' Keep only SNPs that are used in the reference panel to estimate
-#' GWBC
-sus_landrace <- sus_landrace[names(sus_landrace) %in% rownames(GWBC_ref_B)]
-
-#' Use `breedTools` to estimate GWBC of suspect landrace animal using transformed
-#' genotypes
-breedTools:::QPsolve(sus_landrace, GWBC_ref_B)

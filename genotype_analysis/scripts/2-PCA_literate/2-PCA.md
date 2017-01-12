@@ -59,7 +59,7 @@ min(call_rates)
 ```
 
 ```
-## [1] 0.9777778
+## [1] 0.9774011
 ```
 
 There should already be no fixed SNPs
@@ -132,16 +132,5 @@ ggplot(pcs, aes(x = PC1, y = PC2, color = breeds)) +
     geom_point(size = 3, alpha = 0.7)
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png)
-
-One of the Landrace samples clusters with the Yorkshire. Which animal is this?
-
-
-```r
-rownames(affy_geno)[pcs$PC1 < 0 & pcs$PC2 < 0 & pcs$breeds == "Landrace"]
-```
-
-```
-## [1] "a550588-4269754-110716-107_F06.CEL"
-```
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.tiff)
 

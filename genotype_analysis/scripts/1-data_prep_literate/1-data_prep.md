@@ -305,6 +305,40 @@ sum(apply(affy_geno, 2, function(x) any(is.na(x))))
 ## [1] 91620
 ```
 
+Remove from both `affy_geno` and `array_ids` the two Yorkshire that also have
+genome sequence (not relevent for this study) and a Landrace animal that
+was determined to be Yorkshire by PCA analysis and breed composition estimation
+Yorkshire animals, identified by IDs 348 and 350
+
+
+```r
+offending_animals <- plate2_wells$Best.Array[plate2_wells$MSU.ID.. %in% c(348, 350)]
+```
+
+Add suspicious Landrace animal, determined to be "a550588-4269754-110716-107_F06"
+
+
+```r
+offending_animals <- c(offending_animals, "a550588-4269754-110716-107_F06")
+```
+
+Remove from `affy_geno`
+
+
+```r
+affy_geno <- affy_geno[!rownames(affy_geno) %in% paste0(offending_animals, ".CEL"), ]
+```
+
+Remove from `array_ids`
+
+
+```r
+array_ids$Landrace <-
+  array_ids$Landrace[!array_ids$Landrace %in% offending_animals[3]]
+array_ids$Yorkshire <-
+  array_ids$Yorkshire[!array_ids$Yorkshire %in% offending_animals[1:2]]
+```
+
 ## Save data
 
 

@@ -14,7 +14,7 @@
   - [Filter data](#filter-data)
   - [Regression](#regression)
   - [Allele frequencies](#allele-frequencies)
-  - [Estimate GWBC of animal](#estimate-gwbc-of-animal)
+
 
 
 ```r
@@ -28,10 +28,6 @@ were previously genotyped on the Illumina 60K beadchip. Previous 60K data
 may be loaded from the `SF_PG_Industry` project
 2. For each SNP genotyped on both Illumina 60K and Affymetrix 650K platforms,
 test genotype call consistancy using a linear regression.
-3. As seen in `2-PCA.R`, one Landrace animal resembles Yorkshire
-much more than Landrace. Use common SNPs between Illumina and
-Affy platforms to estimate the genome-wide breed composition (GWBC)
-of the animal (*see `SF_PG_Industry`*)
 
 ## Install libraries
 
@@ -722,48 +718,5 @@ ggplot(allele_frequencies, aes(x = Illumina, y = Affy)) +
          y = "Affymetrix allele frequencies")
 ```
 
-![plot of chunk unnamed-chunk-40](figure/unnamed-chunk-40-1.png)
-
-### Estimate GWBC of animal
-From `2-PCA.R`, I know that animal `a550588-4269754-110716-107_F06.CEL`
-clusters much closer with Yorkshire genotyped on the Affy chip
-
-Isoloate this "suspect Landrace" animal and compute its GWBC
-based on the reference panel that has been previously developed
-for the National Swine Registry and used in `SF_PG_Industry`.
-
-
-```r
-sus_landrace <- affy_geno["a550588-4269754-110716-107_F06.CEL", ]
-```
-
-Keep only SNPs present on the Illumina platform and convert to
-Illumina names
-
-
-```r
-sus_landrace <- sus_landrace[affy_markers[idx]]
-names(sus_landrace) <- illum_markers[idx]
-```
-
-Keep only SNPs that are used in the reference panel to estimate
-GWBC
-
-
-```r
-sus_landrace <- sus_landrace[names(sus_landrace) %in% rownames(GWBC_ref_B)]
-```
-
-Use `breedTools` to estimate GWBC of suspect landrace animal using transformed
-genotypes
-
-
-```r
-breedTools:::QPsolve(sus_landrace, GWBC_ref_B)
-```
-
-```
-##         Duroc     Hampshire      Landrace     Yorkshire            R2 
-##  0.000000e+00 -5.374697e-17  2.369919e-18  1.000000e+00  3.214907e-01
-```
+![plot of chunk unnamed-chunk-40](figure/unnamed-chunk-40-1.tiff)
 

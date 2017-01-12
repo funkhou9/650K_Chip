@@ -59,6 +59,37 @@ for (i in 1:100) {
     groups[[i]] <- c(breakp[i], breakp[i + 1])
 }
 
+#' Define a compiled function `which_in_range()` that will iterate through a long vector
+#' finding elements that fall between `start` and `end` integers.
+
+# Will push_back work with a NumericVector object? How do I append?
+Rcpp::cppFunction('NumericVector which_in_range(NumericVector x, double start, double end) {
+                    int n = x.size();
+                    NumericVector out;
+                    for (int i = 0; i < n; i++) {
+                        if (x[i] >= start && x[i] <= end)
+                            out.push_back(x[i]);
+                    }
+                    return out;
+}')
+
+#' Define a compiled function that will repeatedly apply `which_in_range()` for a set of `start`
+#' and `end` values, storing the results each time in a list. If the input of a compiled function
+#' is a list, then C++ needs to know the type of elements in the list
+
+# How to access elements in a List object??
+Rcpp::cppFunction('List pairwise_dist(List g) {
+                    if (!g.inherits("numeric")) {
+                        stop("Input list needs to be numeric");
+                    }
+                    int n = g.size();
+                    NumericVector x;
+                    for (int i = 0; i < n; i++) {
+                        x.push_back(which_in_range(x, g[[i]][1], g[[i]][2]))
+                    }
+                    return
+}')
+
 #' For each chromosome:
 #'
 #' 1. calcualte a pairwise distances for all pairs of SNPs on of that chromosome

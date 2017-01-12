@@ -1,101 +1,98 @@
 
 
 processing file: 2-PCA.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |...                                                              |   4%
+  |                                                                         |                                                                 |   0%  |                                                                         |...                                                              |   5%
   ordinary text without R code
 
-  |                                                                         |......                                                           |   9%
+  |                                                                         |......                                                           |  10%
 label: unnamed-chunk-1
-  |                                                                         |........                                                         |  13%
+  |                                                                         |.........                                                        |  14%
   ordinary text without R code
 
-  |                                                                         |...........                                                      |  17%
+  |                                                                         |............                                                     |  19%
 label: unnamed-chunk-2
-  |                                                                         |..............                                                   |  22%
+  |                                                                         |...............                                                  |  24%
   ordinary text without R code
 
-  |                                                                         |.................                                                |  26%
+  |                                                                         |...................                                              |  29%
 label: unnamed-chunk-3
-  |                                                                         |....................                                             |  30%
+  |                                                                         |......................                                           |  33%
   ordinary text without R code
 
-  |                                                                         |.......................                                          |  35%
+  |                                                                         |.........................                                        |  38%
 label: unnamed-chunk-4
-  |                                                                         |.........................                                        |  39%
-  ordinary text without R code
-
   |                                                                         |............................                                     |  43%
-label: unnamed-chunk-5
+  ordinary text without R code
+
   |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
+label: unnamed-chunk-5
   |                                                                         |..................................                               |  52%
-label: unnamed-chunk-6
+  ordinary text without R code
+
   |                                                                         |.....................................                            |  57%
+label: unnamed-chunk-6
+  |                                                                         |........................................                         |  62%
   ordinary text without R code
 
-  |                                                                         |........................................                         |  61%
+  |                                                                         |...........................................                      |  67%
 label: unnamed-chunk-7
-  |                                                                         |..........................................                       |  65%
+  |                                                                         |..............................................                   |  71%
   ordinary text without R code
 
-  |                                                                         |.............................................                    |  70%
+  |                                                                         |..................................................               |  76%
 label: unnamed-chunk-8
-  |                                                                         |................................................                 |  74%
+  |                                                                         |.....................................................            |  81%
   ordinary text without R code
 
-  |                                                                         |...................................................              |  78%
+  |                                                                         |........................................................         |  86%
 label: unnamed-chunk-9
-  |                                                                         |......................................................           |  83%
+  |                                                                         |...........................................................      |  90%
   ordinary text without R code
 
-  |                                                                         |.........................................................        |  87%
+  |                                                                         |..............................................................   |  95%
 label: unnamed-chunk-10 (with options) 
-List of 1
- $ dpi: num 300
+List of 3
+ $ dpi     : num 300
+ $ dev     : chr "tiff"
+ $ dev.args: language list(tiff = list(compression = "lzw"))
 
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  96%
-label: unnamed-chunk-11
   |                                                                         |.................................................................| 100%
   ordinary text without R code
 
 
 output file: 2-PCA.md
 
-Job Id: 36924817.mgr-04.i
+Job Id: 38518875.mgr-04.i
     Job_Name = 2-PCA
     Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:01:59
+    resources_used.cput = 00:00:43
     resources_used.energy_used = 0
-    resources_used.mem = 5608784kb
-    resources_used.vmem = 6056184kb
-    resources_used.walltime = 00:02:05
+    resources_used.mem = 4258460kb
+    resources_used.vmem = 4705980kb
+    resources_used.walltime = 00:00:47
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Thu Nov  3 12:23:36 2016
+    ctime = Wed Jan 11 23:15:46 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_analy
 	sis/scripts/2-PCA_literate/2-PCA.out
-    exec_host = lac-225/0
+    exec_host = lac-338/0
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Thu Nov  3 12:24:42 2016
+    mtime = Wed Jan 11 23:16:09 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_anal
 	ysis/scripts/2-PCA_literate/2-PCA.out
     Priority = 0
-    qtime = Thu Nov  3 12:23:36 2016
+    qtime = Wed Jan 11 23:15:46 2017
     Rerunable = False
-    Resource_List.mem = 8gb
+    Resource_List.mem = 10gb
     Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
-    Resource_List.walltime = 00:30:00
-    session_id = 10899
+    Resource_List.walltime = 02:00:00
+    session_id = 9329
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -111,10 +108,10 @@ Job Id: 36924817.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Thu Nov  3 12:23:36 2016
+    etime = Wed Jan 11 23:15:46 2017
     submit_args = base.sh
-    start_time = Thu Nov  3 12:24:42 2016
-    Walltime.Remaining = 1635
+    start_time = Wed Jan 11 23:16:09 2017
+    Walltime.Remaining = 7076
     start_count = 1
     fault_tolerant = False
     job_radix = 0

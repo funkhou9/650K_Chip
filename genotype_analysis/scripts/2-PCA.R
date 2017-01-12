@@ -83,9 +83,6 @@ breeds <- unname(breeds)
 pcs <- cbind(breeds, pcs)
 
 #' ## Visualize
-#+ dpi=300
+#+ dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(pcs, aes(x = PC1, y = PC2, color = breeds)) +
     geom_point(size = 3, alpha = 0.7)
-
-#' One of the Landrace samples clusters with the Yorkshire. Which animal is this?
-rownames(affy_geno)[pcs$PC1 < 0 & pcs$PC2 < 0 & pcs$breeds == "Landrace"]
