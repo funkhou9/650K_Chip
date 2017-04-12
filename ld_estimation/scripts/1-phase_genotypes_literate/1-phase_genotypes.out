@@ -56,616 +56,124 @@ label: unnamed-chunk-10
 
   |                                                                         |.........................................................        |  88%
 label: unnamed-chunk-11
+ .--------------------------------------. 
+|  .---.--.--                  .         |
+|  |      |                   _|_        |
+|  |---   |  .--.--. .,-. .  . |  .-.    |
+|  |      |  |  |  | |   )|  | | (.-'    |
+|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
+|                    |                   |
+|                    '                   |
+|              Version 2.2               |
+|                                        |
+|           Mehdi Sargolzaei,            |
+|  Jacques Chesnais and Flavio Schenkel  |
+|           Semex Alliance, ON           |
+|     CGIL, University of Guelph, ON     |
+|                                        |
+|       Last update: Jan 16, 2014        |
+ `--------------------------------------' 
+Error - Output destination [../Duroc_fimpute_run/] is not empty.
+Aborted.
+ .--------------------------------------. 
+|  .---.--.--                  .         |
+|  |      |                   _|_        |
+|  |---   |  .--.--. .,-. .  . |  .-.    |
+|  |      |  |  |  | |   )|  | | (.-'    |
+|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
+|                    |                   |
+|                    '                   |
+|              Version 2.2               |
+|                                        |
+|           Mehdi Sargolzaei,            |
+|  Jacques Chesnais and Flavio Schenkel  |
+|           Semex Alliance, ON           |
+|     CGIL, University of Guelph, ON     |
+|                                        |
+|       Last update: Jan 16, 2014        |
+ `--------------------------------------' 
+Error - Output destination [../Hampshire_fimpute_run/] is not empty.
+Aborted.
+ .--------------------------------------. 
+|  .---.--.--                  .         |
+|  |      |                   _|_        |
+|  |---   |  .--.--. .,-. .  . |  .-.    |
+|  |      |  |  |  | |   )|  | | (.-'    |
+|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
+|                    |                   |
+|                    '                   |
+|              Version 2.2               |
+|                                        |
+|           Mehdi Sargolzaei,            |
+|  Jacques Chesnais and Flavio Schenkel  |
+|           Semex Alliance, ON           |
+|     CGIL, University of Guelph, ON     |
+|                                        |
+|       Last update: Jan 16, 2014        |
+ `--------------------------------------' 
+Error - Output destination [../Landrace_fimpute_run/] is not empty.
+Aborted.
+ .--------------------------------------. 
+|  .---.--.--                  .         |
+|  |      |                   _|_        |
+|  |---   |  .--.--. .,-. .  . |  .-.    |
+|  |      |  |  |  | |   )|  | | (.-'    |
+|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
+|                    |                   |
+|                    '                   |
+|              Version 2.2               |
+|                                        |
+|           Mehdi Sargolzaei,            |
+|  Jacques Chesnais and Flavio Schenkel  |
+|           Semex Alliance, ON           |
+|     CGIL, University of Guelph, ON     |
+|                                        |
+|       Last update: Jan 16, 2014        |
+ `--------------------------------------' 
+Error - Output destination [../Yorkshire_fimpute_run/] is not empty.
+Aborted.
   |                                                                         |............................................................     |  92%
   ordinary text without R code
 
   |                                                                         |..............................................................   |  96%
 label: unnamed-chunk-12
- .--------------------------------------. 
-|  .---.--.--                  .         |
-|  |      |                   _|_        |
-|  |---   |  .--.--. .,-. .  . |  .-.    |
-|  |      |  |  |  | |   )|  | | (.-'    |
-|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
-|                    |                   |
-|                    '                   |
-|              Version 2.2               |
-|                                        |
-|           Mehdi Sargolzaei,            |
-|  Jacques Chesnais and Flavio Schenkel  |
-|           Semex Alliance, ON           |
-|     CGIL, University of Guelph, ON     |
-|                                        |
-|       Last update: Jan 16, 2014        |
- `--------------------------------------' 
- .-------. 
-|  Duroc  |
- `-------' 
-------------------------------- Files --------------------------------
-Pedigree                          : None
-SNP info                          : "snp_info_fimpute.txt"
-Genotypes                         : "Duroc_geno_fimpute.txt"
-Output folder                     : "../Duroc_fimpute_run/"
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-31 individuals found in genotypes file(s).
-------------------------------------------------------------- 00:00:00
-
--------------------------------- SNP ---------------------------------
-Remark: SNPs are not sorted based on chromosome number and position!
-Sorting SNPs... done.
-No. chromosomes                               : 20
-No. SNP in total                              : 634198
-No. SNP excluded                              : 185987
-No. SNP considered                            : 448211
-No. chip(s)                                   : 1
-HD chip                                       : chip 1
-
-No. SNP on chip (off diags are SNP in common)
-             Chip 1 
-Chip 1       448211
-----------------------------------------------------------------------
-
------------------------------ Chromosome -----------------------------
-Chr        Length(MB) No. SNP
-                          Chip 1 
-1            315.09      47322
-2            162.53      30954
-3            144.74      24200
-4            143.43      25580
-5            111.50      19279
-6            157.73      30823
-7            134.73      24044
-8            148.48      27883
-9            153.65      27919
-10            79.05      16647
-11            87.68      16477
-12            63.58      12636
-13           218.60      40161
-14           153.80      29712
-15           157.68      23925
-16            86.84      16012
-17            69.33      13495
-18            61.22       9928
-19           144.15      11209
-20             0.04          5
-Overall     2593.86     448211
-----------------------------------------------------------------------
-
-Reading genotypes from "Duroc_geno_fimpute.txt" ...
-No. records in genotype file(s)               :  31
-No. records read in                           :  31
-
----------------------------- Individuals -----------------------------
-Chip            No.    Missing%
-1                31       0.24
-Overall          31
-----------------------------------------------------------------------
-
------------------------------ Parentage ------------------------------
-Chip                                          : chip1
-No. SNP                                       : 448211
-No. genotyped individuals                     : 31
-No. target individuals                        : 31
-No. progeny-parent mismatches                 : 0
-No. pseudo parents detected                   : 0 [0, 0, 0]
-------------------------------------------------------------- 00:00:01
-
------------------------------ Parameters -----------------------------
-Method : Population
-
-Population
-  No. reference individuals                   : 31
-  No. target individuals                      : 0 + ref
-  Sliding windows
-    Shrink factor                             : 0.150
-    Overlap                                   : 0.650
-----------------------------------------------------------------------
-
-Imputing... (No. jobs = 5)
-Chromosome 13 done.
-Chromosome  2 done.
-Chromosome  1 done.
-Chromosome 14 done.
-Chromosome  6 done.
-Chromosome  9 done.
-Chromosome  8 done.
-Chromosome  4 done.
-Chromosome  3 done.
-Chromosome  7 done.
-Chromosome 15 done.
-Chromosome  5 done.
-Chromosome 10 done.
-Chromosome 16 done.
-Chromosome 11 done.
-Chromosome 20 done.
-Chromosome 17 done.
-Chromosome 12 done.
-Chromosome 19 done.
-Chromosome 18 done.
-All child jobs finished normally.
-
-------------------------------- Report -------------------------------
-No. genotyped individuals           : 31
-No. SNP                             : 448211
-No. chromosomes                     : 20
-Missing                             :  0.2380%
-Infered                             :  0.2380%
-Missing remaining                   :  0.0000%
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-Group             No.    Missing
-Reference          31     0.000%
-Overall            31     0.000%
-----------------------------------------------------------------------
-
-Overall time : 00:00:35
-Completed.
- .--------------------------------------. 
-|  .---.--.--                  .         |
-|  |      |                   _|_        |
-|  |---   |  .--.--. .,-. .  . |  .-.    |
-|  |      |  |  |  | |   )|  | | (.-'    |
-|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
-|                    |                   |
-|                    '                   |
-|              Version 2.2               |
-|                                        |
-|           Mehdi Sargolzaei,            |
-|  Jacques Chesnais and Flavio Schenkel  |
-|           Semex Alliance, ON           |
-|     CGIL, University of Guelph, ON     |
-|                                        |
-|       Last update: Jan 16, 2014        |
- `--------------------------------------' 
- .-----------. 
-|  Hampshire  |
- `-----------' 
-------------------------------- Files --------------------------------
-Pedigree                          : None
-SNP info                          : "snp_info_fimpute.txt"
-Genotypes                         : "Hampshire_geno_fimpute.txt"
-Output folder                     : "../Hampshire_fimpute_run/"
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-22 individuals found in genotypes file(s).
-------------------------------------------------------------- 00:00:00
-
--------------------------------- SNP ---------------------------------
-Remark: SNPs are not sorted based on chromosome number and position!
-Sorting SNPs... done.
-No. chromosomes                               : 20
-No. SNP in total                              : 634198
-No. SNP excluded                              : 185987
-No. SNP considered                            : 448211
-No. chip(s)                                   : 1
-HD chip                                       : chip 1
-
-No. SNP on chip (off diags are SNP in common)
-             Chip 1 
-Chip 1       448211
-----------------------------------------------------------------------
-
------------------------------ Chromosome -----------------------------
-Chr        Length(MB) No. SNP
-                          Chip 1 
-1            315.09      47322
-2            162.53      30954
-3            144.74      24200
-4            143.43      25580
-5            111.50      19279
-6            157.73      30823
-7            134.73      24044
-8            148.48      27883
-9            153.65      27919
-10            79.05      16647
-11            87.68      16477
-12            63.58      12636
-13           218.60      40161
-14           153.80      29712
-15           157.68      23925
-16            86.84      16012
-17            69.33      13495
-18            61.22       9928
-19           144.15      11209
-20             0.04          5
-Overall     2593.86     448211
-----------------------------------------------------------------------
-
-Reading genotypes from "Hampshire_geno_fimpute.txt" ...
-No. records in genotype file(s)               :  22
-No. records read in                           :  22
-
----------------------------- Individuals -----------------------------
-Chip            No.    Missing%
-1                22       0.23
-Overall          22
-----------------------------------------------------------------------
-
------------------------------ Parentage ------------------------------
-Chip                                          : chip1
-No. SNP                                       : 448211
-No. genotyped individuals                     : 22
-No. target individuals                        : 22
-No. progeny-parent mismatches                 : 0
-No. pseudo parents detected                   : 0 [0, 0, 0]
-------------------------------------------------------------- 00:00:00
-
------------------------------ Parameters -----------------------------
-Method : Population
-
-Population
-  No. reference individuals                   : 22
-  No. target individuals                      : 0 + ref
-  Sliding windows
-    Shrink factor                             : 0.150
-    Overlap                                   : 0.650
-----------------------------------------------------------------------
-
-Imputing... (No. jobs = 5)
-Chromosome 14 done.
-Chromosome  2 done.
-Chromosome  6 done.
-Chromosome 13 done.
-Chromosome  1 done.
-Chromosome  9 done.
-Chromosome  3 done.
-Chromosome  4 done.
-Chromosome  8 done.
-Chromosome  7 done.
-Chromosome 15 done.
-Chromosome 11 done.
-Chromosome 10 done.
-Chromosome  5 done.
-Chromosome 16 done.
-Chromosome 19 done.
-Chromosome 20 done.
-Chromosome 17 done.
-Chromosome 12 done.
-Chromosome 18 done.
-All child jobs finished normally.
-
-------------------------------- Report -------------------------------
-No. genotyped individuals           : 22
-No. SNP                             : 448211
-No. chromosomes                     : 20
-Missing                             :  0.2271%
-Infered                             :  0.2271%
-Missing remaining                   :  0.0000%
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-Group             No.    Missing
-Reference          22     0.000%
-Overall            22     0.000%
-----------------------------------------------------------------------
-
-Overall time : 00:00:29
-Completed.
- .--------------------------------------. 
-|  .---.--.--                  .         |
-|  |      |                   _|_        |
-|  |---   |  .--.--. .,-. .  . |  .-.    |
-|  |      |  |  |  | |   )|  | | (.-'    |
-|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
-|                    |                   |
-|                    '                   |
-|              Version 2.2               |
-|                                        |
-|           Mehdi Sargolzaei,            |
-|  Jacques Chesnais and Flavio Schenkel  |
-|           Semex Alliance, ON           |
-|     CGIL, University of Guelph, ON     |
-|                                        |
-|       Last update: Jan 16, 2014        |
- `--------------------------------------' 
- .----------. 
-|  Landrace  |
- `----------' 
-------------------------------- Files --------------------------------
-Pedigree                          : None
-SNP info                          : "snp_info_fimpute.txt"
-Genotypes                         : "Landrace_geno_fimpute.txt"
-Output folder                     : "../Landrace_fimpute_run/"
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-34 individuals found in genotypes file(s).
-------------------------------------------------------------- 00:00:00
-
--------------------------------- SNP ---------------------------------
-Remark: SNPs are not sorted based on chromosome number and position!
-Sorting SNPs... done.
-No. chromosomes                               : 20
-No. SNP in total                              : 634198
-No. SNP excluded                              : 185987
-No. SNP considered                            : 448211
-No. chip(s)                                   : 1
-HD chip                                       : chip 1
-
-No. SNP on chip (off diags are SNP in common)
-             Chip 1 
-Chip 1       448211
-----------------------------------------------------------------------
-
------------------------------ Chromosome -----------------------------
-Chr        Length(MB) No. SNP
-                          Chip 1 
-1            315.09      47322
-2            162.53      30954
-3            144.74      24200
-4            143.43      25580
-5            111.50      19279
-6            157.73      30823
-7            134.73      24044
-8            148.48      27883
-9            153.65      27919
-10            79.05      16647
-11            87.68      16477
-12            63.58      12636
-13           218.60      40161
-14           153.80      29712
-15           157.68      23925
-16            86.84      16012
-17            69.33      13495
-18            61.22       9928
-19           144.15      11209
-20             0.04          5
-Overall     2593.86     448211
-----------------------------------------------------------------------
-
-Reading genotypes from "Landrace_geno_fimpute.txt" ...
-No. records in genotype file(s)               :  34
-No. records read in                           :  34
-
----------------------------- Individuals -----------------------------
-Chip            No.    Missing%
-1                34       0.14
-Overall          34
-----------------------------------------------------------------------
-
------------------------------ Parentage ------------------------------
-Chip                                          : chip1
-No. SNP                                       : 448211
-No. genotyped individuals                     : 34
-No. target individuals                        : 34
-No. progeny-parent mismatches                 : 0
-No. pseudo parents detected                   : 0 [0, 0, 0]
-------------------------------------------------------------- 00:00:01
-
------------------------------ Parameters -----------------------------
-Method : Population
-
-Population
-  No. reference individuals                   : 34
-  No. target individuals                      : 0 + ref
-  Sliding windows
-    Shrink factor                             : 0.150
-    Overlap                                   : 0.650
-----------------------------------------------------------------------
-
-Imputing... (No. jobs = 5)
-Chromosome  2 done.
-Chromosome 14 done.
-Chromosome  6 done.
-Chromosome 13 done.
-Chromosome  1 done.
-Chromosome  9 done.
-Chromosome  8 done.
-Chromosome  4 done.
-Chromosome  3 done.
-Chromosome  7 done.
-Chromosome  5 done.
-Chromosome 15 done.
-Chromosome 11 done.
-Chromosome 10 done.
-Chromosome 17 done.
-Chromosome 12 done.
-Chromosome 19 done.
-Chromosome 20 done.
-Chromosome 16 done.
-Chromosome 18 done.
-All child jobs finished normally.
-
-------------------------------- Report -------------------------------
-No. genotyped individuals           : 34
-No. SNP                             : 448211
-No. chromosomes                     : 20
-Missing                             :  0.1372%
-Infered                             :  0.1372%
-Missing remaining                   :  0.0000%
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-Group             No.    Missing
-Reference          34     0.000%
-Overall            34     0.000%
-----------------------------------------------------------------------
-
-Overall time : 00:00:39
-Completed.
- .--------------------------------------. 
-|  .---.--.--                  .         |
-|  |      |                   _|_        |
-|  |---   |  .--.--. .,-. .  . |  .-.    |
-|  |      |  |  |  | |   )|  | | (.-'    |
-|  '    --'--'  '  `-|`-' `--`-`-'`--'   |
-|                    |                   |
-|                    '                   |
-|              Version 2.2               |
-|                                        |
-|           Mehdi Sargolzaei,            |
-|  Jacques Chesnais and Flavio Schenkel  |
-|           Semex Alliance, ON           |
-|     CGIL, University of Guelph, ON     |
-|                                        |
-|       Last update: Jan 16, 2014        |
- `--------------------------------------' 
- .-----------. 
-|  Yorkshire  |
- `-----------' 
-------------------------------- Files --------------------------------
-Pedigree                          : None
-SNP info                          : "snp_info_fimpute.txt"
-Genotypes                         : "Yorkshire_geno_fimpute.txt"
-Output folder                     : "../Yorkshire_fimpute_run/"
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-92 individuals found in genotypes file(s).
-------------------------------------------------------------- 00:00:00
-
--------------------------------- SNP ---------------------------------
-Remark: SNPs are not sorted based on chromosome number and position!
-Sorting SNPs... done.
-No. chromosomes                               : 20
-No. SNP in total                              : 634198
-No. SNP excluded                              : 185987
-No. SNP considered                            : 448211
-No. chip(s)                                   : 1
-HD chip                                       : chip 1
-
-No. SNP on chip (off diags are SNP in common)
-             Chip 1 
-Chip 1       448211
-----------------------------------------------------------------------
-
------------------------------ Chromosome -----------------------------
-Chr        Length(MB) No. SNP
-                          Chip 1 
-1            315.09      47322
-2            162.53      30954
-3            144.74      24200
-4            143.43      25580
-5            111.50      19279
-6            157.73      30823
-7            134.73      24044
-8            148.48      27883
-9            153.65      27919
-10            79.05      16647
-11            87.68      16477
-12            63.58      12636
-13           218.60      40161
-14           153.80      29712
-15           157.68      23925
-16            86.84      16012
-17            69.33      13495
-18            61.22       9928
-19           144.15      11209
-20             0.04          5
-Overall     2593.86     448211
-----------------------------------------------------------------------
-
-Reading genotypes from "Yorkshire_geno_fimpute.txt" ...
-No. records in genotype file(s)               :  92
-No. records read in                           :  92
-
----------------------------- Individuals -----------------------------
-Chip            No.    Missing%
-1                92       0.09
-Overall          92
-----------------------------------------------------------------------
-
------------------------------ Parentage ------------------------------
-Chip                                          : chip1
-No. SNP                                       : 448211
-No. genotyped individuals                     : 92
-No. target individuals                        : 92
-No. progeny-parent mismatches                 : 0
-No. pseudo parents detected                   : 0 [0, 0, 0]
-------------------------------------------------------------- 00:00:01
-
------------------------------ Parameters -----------------------------
-Method : Population
-
-Population
-  No. reference individuals                   : 92
-  No. target individuals                      : 0 + ref
-  Sliding windows
-    Shrink factor                             : 0.150
-    Overlap                                   : 0.650
-----------------------------------------------------------------------
-
-Imputing... (No. jobs = 5)
-Chromosome  2 done.
-Chromosome  6 done.
-Chromosome 14 done.
-Chromosome 13 done.
-Chromosome  1 done.
-Chromosome  9 done.
-Chromosome  4 done.
-Chromosome  8 done.
-Chromosome  3 done.
-Chromosome  7 done.
-Chromosome 10 done.
-Chromosome 15 done.
-Chromosome  5 done.
-Chromosome 11 done.
-Chromosome 16 done.
-Chromosome 20 done.
-Chromosome 17 done.
-Chromosome 19 done.
-Chromosome 18 done.
-Chromosome 12 done.
-All child jobs finished normally.
-
-------------------------------- Report -------------------------------
-No. genotyped individuals           : 92
-No. SNP                             : 448211
-No. chromosomes                     : 20
-Missing                             :  0.0889%
-Infered                             :  0.0889%
-Missing remaining                   :  0.0000%
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-Group             No.    Missing
-Reference          92     0.000%
-Overall            92     0.000%
-----------------------------------------------------------------------
-
-Overall time : 00:01:19
-Completed.
   |                                                                         |.................................................................| 100%
   ordinary text without R code
 
 
 output file: 1-phase_genotypes.md
 
-Job Id: 36926794.mgr-04.i
+Job Id: 40585402.mgr-04.i
     Job_Name = 1-phase_genotypes
-    Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:06:28
+    Job_Owner = funkhou9@dev-intel14.i
+    resources_used.cput = 00:01:16
     resources_used.energy_used = 0
-    resources_used.mem = 4874088kb
-    resources_used.vmem = 5332492kb
-    resources_used.walltime = 00:03:44
+    resources_used.mem = 3471208kb
+    resources_used.vmem = 3910532kb
+    resources_used.walltime = 00:01:19
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Thu Nov  3 13:24:05 2016
-    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
+    ctime = Thu Mar 23 11:59:22 2017
+    Error_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
 	scripts/1-phase_genotypes_literate/1-phase_genotypes.out
-    exec_host = lac-229/24
+    exec_host = lac-403/23
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Thu Nov  3 13:24:46 2016
-    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
+    mtime = Thu Mar 23 12:00:12 2017
+    Output_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
 	/scripts/1-phase_genotypes_literate/1-phase_genotypes.out
     Priority = 0
-    qtime = Thu Nov  3 13:24:05 2016
+    qtime = Thu Mar 23 11:59:22 2017
     Rerunable = False
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
-    Resource_List.walltime = 02:00:00
-    session_id = 31118
+    Resource_List.walltime = 00:30:00
+    session_id = 15833
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -677,16 +185,16 @@ Job Id: 36926794.mgr-04.i
 	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
 	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
 	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/script
-	s,PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
+	s,PBS_O_HOST=dev-intel14.i,PBS_O_SERVER=mgr-04
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Thu Nov  3 13:24:05 2016
+    etime = Thu Mar 23 11:59:22 2017
     submit_args = base.sh
-    start_time = Thu Nov  3 13:24:46 2016
-    Walltime.Remaining = 6898
+    start_time = Thu Mar 23 12:00:12 2017
+    Walltime.Remaining = 1677
     start_count = 1
     fault_tolerant = False
     job_radix = 0
-    submit_host = dev-intel16.i
+    submit_host = dev-intel14.i
 

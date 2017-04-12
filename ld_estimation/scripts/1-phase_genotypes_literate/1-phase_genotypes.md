@@ -103,16 +103,6 @@ Remove markers on unassigned contigs
 affy_map <- affy_map[affy_map$chr %in% c(as.character(1:18), "X", "Y"), ]
 ```
 
-Remove suspecious Landrace animal that appears to be Yorkshire instead of
-Landrace
-(see [genotype_analysis/2-PCA.R](../../../genotype_analysis/scripts/2-PCA_literate/2-PCA.md))
-
-
-```r
-affy_geno <- affy_geno[!rownames(affy_geno) %in% "107_F06", ]
-array_ids$Landrace <- array_ids$Landrace[!array_ids$Landrace %in% "107_F06"]
-```
-
 Phase genotypes with `fimpute_run()`. Stdout will be printed to screen and
 without returning anything, `fimpute_run()` will save haplotypes to disk
 in `output_folder`
@@ -132,7 +122,23 @@ snpTools::fimpute_run(geno = affy_geno,
 
 ```
 ## Warning in snpTools::fimpute_run(geno = affy_geno, map = affy_map, groups
-## = array_ids, : 17066 SNPs present in geno were not present in map, and were
+## = array_ids, : 20055 SNPs present in geno were not present in map, and were
 ## removed
+```
+
+### Save data
+Prep and save Affy map for future use, such as LD calculations. Software
+for LD calculations will require sex chromosomes to be recoded beforehand.
+
+
+```r
+affy_map$chr[affy_map$chr == "X"] <- 19
+affy_map$chr[affy_map$chr == "Y"] <- 20
+write.table(affy_map,
+            file = "../affy_map.txt",
+            sep = '\t',
+            row.names = TRUE,
+            col.names = FALSE,
+            quote = FALSE)
 ```
 

@@ -65,12 +65,6 @@ array_ids <- lapply(array_ids, function(x) substr(x, 24, 30))
 #' Remove markers on unassigned contigs
 affy_map <- affy_map[affy_map$chr %in% c(as.character(1:18), "X", "Y"), ]
 
-#' Remove suspecious Landrace animal that appears to be Yorkshire instead of
-#' Landrace
-#' (see [genotype_analysis/2-PCA.R](../../../genotype_analysis/scripts/2-PCA_literate/2-PCA.md))
-affy_geno <- affy_geno[!rownames(affy_geno) %in% "107_F06", ]
-array_ids$Landrace <- array_ids$Landrace[!array_ids$Landrace %in% "107_F06"]
-
 #' Phase genotypes with `fimpute_run()`. Stdout will be printed to screen and
 #' without returning anything, `fimpute_run()` will save haplotypes to disk
 #' in `output_folder`

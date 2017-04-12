@@ -9,9 +9,15 @@
 Using wrappers in `snpTools`, phase genotypes with FImpute software for all chromosomes
 within each breed and store the result for downstream LD calculations.
 
-[**2-process_haplotypes.R**](./scripts/2-process_haplotypes_literate/2-process_haplotypes.md)
-Loads haplotypes phased in the previous script and saves results as a data.frame
-to disk
+[**2a-2d_ld_calculation**](./scripts/2a-yorkshire_ld_calculation.R)
+A set of 4 scripts (one for each breed), each one parameterized by PBS array
+to estimate LD of each chromosome separately. The yorkshire script is linked
+above.
 
-[**3-ld_calc.R**](./scripts/3-ld_calc_literate/3-ld_calc.md)
-Calculates pairwise distances and correlations between SNPs
+[**3-process_ld.R**](./scripts/3-process_ld_literate/3-process_ld.md)
+Once LD is estimated for all pairwise combinations of SNPs, whose distances are
+less than 50KB (scripts 2a-2d), mean and sd LD estimates are calculated for 1KB
+windows from 0KB to 50KB.
+
+[**4-visualize_global_ld.R**](./scripts/4-visualize_global_ld_literate/4-visualize_global_ld.md)
+Plotting estimates obtained in `3-process_ld.R`
