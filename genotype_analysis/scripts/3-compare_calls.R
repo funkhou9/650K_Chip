@@ -14,7 +14,7 @@
 #'   - [Filter data](#filter-data)
 #'   - [Regression](#regression)
 #'   - [Allele frequencies](#allele-frequencies)
-#' 
+#'
 
 setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 
@@ -260,7 +260,7 @@ affy_freq <-
                             populations = list("Affy" = rownames(affy_calls)))
 allele_frequencies <- as.data.frame(cbind(illum_freq, affy_freq))
 
-#+ dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
+#+ frequency_diff, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(allele_frequencies, aes(x = Illumina, y = Affy)) +
     geom_point() +
     labs(x = "Illumina allele frequencies",

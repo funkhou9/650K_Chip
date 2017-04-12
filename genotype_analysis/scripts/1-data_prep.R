@@ -16,6 +16,7 @@
 #'   - [Filter samples](#filter-samples)
 #'   - [Filter SNPs](#filter-snps)
 #'   - [Add breed info](#add-breed-info)
+#'   - [Compute and save allele frequencies](#compute-and-save-allele-frequencies)
 #' 5. [Save data](#save-data)
 
 setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
@@ -25,13 +26,20 @@ setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 #' 1. Load raw data from Affymetrix containing 650K genotypes for 180 animals
 #' of Yorkshire, Landrace, Hampshire, and Duroc breeds.
 #' 2. Attach breed information to each sample.
+#' 3. Calculate and save allele frequencies for each SNP within each breed
 #'
 
 #' ## Install libraries
 library(devtools)
+library(dplyr)
 library(magrittr)
-#' load [`snpTools`](https://github.com/funkhou9/snpTools/commit/6603afd1db77fb6a93ece38b4a3eeafc7fbc92f2)
+#' load [`snpTools`](https://github.com/funkhou9/snpTools/commit/f3e70629361e023219cea7f5c27f5c56bbd93323)
+# devtools::install_github("funkhou9/snpTools")
 library(snpTools)
+#' Load ['breedTools'](https://github.com/funkhou9/breedTools/commit/fa2d2cf69ef8abd14354aeb80b980b4a6074f28f)
+# devtools::install_github("funkhou9/breedTools")
+library(breedTools)
+library(methods)
 
 #' ## Load data
 #'
@@ -65,13 +73,14 @@ plate1_wells <-
             header = TRUE,
             stringsAsFactors = FALSE)
 
-#' Load **PolyHighResolution SNP list**
+#' Load **SNP performance dataset**
 #'
-#' > Contains names of probes that passed all filtering criteria
+#' > Contains a list of each probe and how it was classified (PolyHighResolution,
+#' > MonoHighResolution, NoMinorHom, CallRate Below Threshold, etc.)
 #'
-plate1_goodSNPs <-
+plate1_SNP_performance <-
     read.table(paste0("/mnt/research/pigsnp/raw_data/affymetrix_hd/PigIA&MIAX-selected/",
-                      "cluster/filtered/PolyHighResolution.ps"),
+                      "cluster/filtered/Ps.performance.txt"),
                header = TRUE,
                stringsAsFactors = FALSE)
 
@@ -112,15 +121,19 @@ plate2_wells <-
 #'
 #' > Contains names of probes that passed all filtering criteria
 #'
-plate2_goodSNPs <-
+plate2_SNP_performance <-
  read.table(paste0("/mnt/research/pigsnp/raw_data/affymetrix_hd/PigIA&MIAX_pt2/",
-                   "cluster_final/SNPolisher/PolyHighResolution.ps"),
+                   "cluster_final/SNPolisher/Ps.performance.txt"),
             header = TRUE,
             stringsAsFactors = FALSE)
 
 #' ## Analysis
 
 #' ### Filter samples
+
+#' Several samples from plate 1 failed according to Affy criteria: they did not
+#' have a sufficient dish QC value and/or animal-wise calling rate. The animals
+#' that failed were all the animals from ISU. No animals failed QC from plate2.
 
 #' From plate 1, ensure that samples from ISU are not included in `plate1_geno`.
 #' Samples from ISU were all of the samples that failed QC.
@@ -134,12 +147,33 @@ pass_samples <- paste0(pass_samples, ".CEL")
 sum(pass_samples %in% colnames(plate1_geno)[-1])
 
 #' ### Filter SNPs
-#' Use `plate1_goodSNPs` to only keep PolyHighResolution SNPs from `plate1_geno`
-plate1_geno <- plate1_geno[plate1_geno$probeset_id %in% plate1_goodSNPs$probeset_id, ]
-dim(plate1_geno)
 
-#' Likewise use `plate2_goodSNPs` to only keep PolyHighResolution SNPs from `plate2_geno`
-plate2_geno <- plate2_geno[plate2_geno$probeset_id %in% plate2_goodSNPs$probeset_id, ]
+#' Plate1 and Plate2 were processed by Affymetrix seperately. The consequence
+#' of this is that PolyHighResolution SNPs (recommended SNPs) were classified
+#' for each plate seperately. Plate1 contains all Yorkshire animals, so even
+#' if a SNP is not PolyHighResolution on Plate1 (at least two examples of the
+#' minor allele), that doesn't mean it isn't interesting, especially if it is
+#' PolyHighResolution on Plate2, containing Duroc, Landrace, and Hampshire
+#' animals.
+#'
+#' Find the number of SNPs that are PolyHighResolution in at least one plate,
+#' and MonoHighResolution (no minor het or homozygotes), NoMinorHom (no minor
+#' homozygotes), or PolyHighResolution in the other plate.
+
+plate_stats <-
+  left_join(plate1_SNP_performance,
+            plate2_SNP_performance,
+            by = "probeset_id") %>%
+  filter(ConversionType.x == "PolyHighResolution" | ConversionType.y == "PolyHighResolution") %>%
+  filter(ConversionType.x %in% c("MonoHighResolution", "NoMinorHom", "PolyHighResolution")) %>%
+  filter(ConversionType.y %in% c("MonoHighResolution", "NoMinorHom", "PolyHighResolution"))
+
+knitr::kable(table(plate_stats$ConversionType.y, plate_stats$ConversionType.x))
+
+#' From both plates, only keep SNPs present on filtered `plate_stats`
+plate1_geno <- plate1_geno[plate1_geno$probeset_id %in% plate_stats$probeset_id, ]
+dim(plate1_geno)
+plate2_geno <- plate2_geno[plate2_geno$probeset_id %in% plate_stats$probeset_id, ]
 dim(plate2_geno)
 
 #' Note that for each plate, there are n+1 columns since the first column is used
@@ -217,5 +251,20 @@ array_ids$Landrace <-
 array_ids$Yorkshire <-
   array_ids$Yorkshire[!array_ids$Yorkshire %in% offending_animals[1:2]]
 
+#' After removing three animals, remove SNPs with MAF < 0.05
+afs <- colMeans(affy_geno, na.rm = TRUE) / 2
+affy_geno <- affy_geno[, !(afs > 0.95 | afs < 0.05)]
+
+#' ### Compute and save allele frequencies
+freq <-
+  breedTools::allele_freq(affy_geno,
+                          lapply(array_ids, function(x) paste0(x, ".CEL"))) %>%
+  as.data.frame()
+freq <- cbind("probeset_id" = rownames(freq), freq)
+
 #' ## Save data
 save(affy_geno, array_ids, file = "../1-data_prep.RData")
+write.table(freq,
+            file = "../allele_frequencies.txt",
+            row.names = FALSE,
+            quote = FALSE)

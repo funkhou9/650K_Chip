@@ -248,7 +248,7 @@ nrow(results[results$slope == 1 & results$R2 == 1, ])
 ```
 
 ```
-## [1] 2080
+## [1] 2317
 ```
 
 Add 4th column, a logical vector that is `TRUE` if the SNP is currently used
@@ -357,7 +357,9 @@ head(results[results$R2 < 0.05, ])
 ##             intercept       slope           R2  GWBC
 ## ASGA0096844 0.1080617  0.06232133 0.0121087782 FALSE
 ## ALGA0028021 1.7493809 -0.01188707 0.0004052411 FALSE
+## CASI0009814 1.9166667 -0.41666667 0.0100546976 FALSE
 ## DRGA0008687 0.4154786  0.04480652 0.0032858113 FALSE
+## DBWU0000685 0.7777778  0.62222222 0.0462536873 FALSE
 ## ALGA0081437 0.6379310  0.36206897 0.0071093486 FALSE
 ```
 
@@ -421,10 +423,10 @@ head(results[results$slope < -0.75, ])
 ##             intercept slope R2  GWBC
 ## DRGA0000277         2    -1  1 FALSE
 ## M1GA0000883         2    -1  1 FALSE
+## H3GA0001754         2    -1  1 FALSE
 ## ASGA0003027         2    -1  1 FALSE
 ## ASGA0003043         2    -1  1 FALSE
 ## ALGA0003901         2    -1  1 FALSE
-## DRGA0001119         2    -1  1 FALSE
 ```
 
 Examples of genotypes for this set of markers:
@@ -504,12 +506,12 @@ head(results[round(results$intercept, 1) == 1 & round(results$slope, 1) == 0.5, 
 
 ```
 ##             intercept     slope        R2  GWBC
+## ALGA0002156 1.0000000 0.5000000 0.4918033 FALSE
 ## ALGA0002747 1.0000000 0.5000000 1.0000000 FALSE
 ## ALGA0004678 0.9855879 0.5044219 0.9808203 FALSE
 ## MARC0073315 1.0000000 0.5000000 1.0000000 FALSE
 ## ALGA0006547 0.9680851 0.5106383 0.9612015  TRUE
-## ALGA0007262 1.0000000 0.5000000 1.0000000 FALSE
-## MARC0033050 1.0221141 0.4913755 0.9731162 FALSE
+## ASGA0005379 1.0000000 0.5000000 1.0000000 FALSE
 ```
 
 Examples of genotypes for this set of markers:
@@ -634,10 +636,10 @@ head(results[round(results$intercept, 1) == 2 & round(results$slope, 1) == -1, ]
 ##             intercept slope R2  GWBC
 ## DRGA0000277         2    -1  1 FALSE
 ## M1GA0000883         2    -1  1 FALSE
+## H3GA0001754         2    -1  1 FALSE
 ## ASGA0003027         2    -1  1 FALSE
 ## ASGA0003043         2    -1  1 FALSE
 ## ALGA0003901         2    -1  1 FALSE
-## DRGA0001119         2    -1  1 FALSE
 ```
 
 Examples of genotypes for this set of markers:
@@ -718,5 +720,5 @@ ggplot(allele_frequencies, aes(x = Illumina, y = Affy)) +
          y = "Affymetrix allele frequencies")
 ```
 
-![plot of chunk unnamed-chunk-40](figure/unnamed-chunk-40-1.tiff)
+![plot of chunk frequency_diff](figure/frequency_diff-1.tiff)
 

@@ -132,5 +132,5 @@ ggplot(pcs, aes(x = PC1, y = PC2, color = breeds)) +
     geom_point(size = 3, alpha = 0.7)
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.tiff)
+![plot of chunk PCA](figure/PCA-1.tiff)
 

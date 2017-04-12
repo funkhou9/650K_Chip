@@ -83,6 +83,6 @@ breeds <- unname(breeds)
 pcs <- cbind(breeds, pcs)
 
 #' ## Visualize
-#+ dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
+#+ PCA, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(pcs, aes(x = PC1, y = PC2, color = breeds)) +
     geom_point(size = 3, alpha = 0.7)

@@ -197,7 +197,7 @@ label: unnamed-chunk-38
   |                                                                         |...............................................................  |  98%
 label: unnamed-chunk-39
   |                                                                         |................................................................ |  99%
-label: unnamed-chunk-40 (with options) 
+label: frequency_diff (with options) 
 List of 3
  $ dpi     : num 300
  $ dev     : chr "tiff"
@@ -209,37 +209,37 @@ List of 3
 
 output file: 3-compare_calls.md
 
-Job Id: 38518941.mgr-04.i
+Job Id: 40557328.mgr-04.i
     Job_Name = 3-compare_calls
     Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:01:25
+    resources_used.cput = 00:01:34
     resources_used.energy_used = 0
-    resources_used.mem = 2494396kb
-    resources_used.vmem = 2944148kb
-    resources_used.walltime = 00:01:30
+    resources_used.mem = 2727940kb
+    resources_used.vmem = 3181844kb
+    resources_used.walltime = 00:01:38
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Wed Jan 11 23:28:42 2017
+    ctime = Wed Mar 22 15:52:22 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_analy
 	sis/scripts/3-compare_calls_literate/3-compare_calls.out
-    exec_host = lac-316/13
+    exec_host = lac-286/24
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Wed Jan 11 23:29:55 2017
+    mtime = Wed Mar 22 15:52:52 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_anal
 	ysis/scripts/3-compare_calls_literate/3-compare_calls.out
     Priority = 0
-    qtime = Wed Jan 11 23:28:42 2017
+    qtime = Wed Mar 22 15:52:22 2017
     Rerunable = False
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 02:00:00
-    session_id = 25751
+    session_id = 25816
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -255,10 +255,10 @@ Job Id: 38518941.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Wed Jan 11 23:28:42 2017
+    etime = Wed Mar 22 15:52:22 2017
     submit_args = base.sh
-    start_time = Wed Jan 11 23:29:55 2017
-    Walltime.Remaining = 7075
+    start_time = Wed Mar 22 15:52:52 2017
+    Walltime.Remaining = 7065
     start_count = 1
     fault_tolerant = False
     job_radix = 0
