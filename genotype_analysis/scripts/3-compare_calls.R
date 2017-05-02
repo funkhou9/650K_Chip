@@ -11,9 +11,10 @@
 #' 2. [Install libraries](#install-libraries)
 #' 3. [Load data](#load-data)
 #' 4. [Analysis](#analysis)
-#'   - [Filter data](#filter-data)
-#'   - [Regression](#regression)
-#'   - [Allele frequencies](#allele-frequencies)
+#'     - [Filter data](#filter-data)
+#'     - [Regression](#regression)
+#'     - [Allele frequencies](#allele-frequencies)
+#'     - [SNP correlations](#snp-correlations)
 #'
 
 setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
@@ -24,13 +25,16 @@ setwd("/mnt/research/pigsnp/NSR/650K_Chip/genotype_analysis/scripts")
 #' were previously genotyped on the Illumina 60K beadchip. Previous 60K data
 #' may be loaded from the `SF_PG_Industry` project
 #' 2. For each SNP genotyped on both Illumina 60K and Affymetrix 650K platforms,
-#' test genotype call consistancy using a linear regression.
+#' test genotype call consistancy using a linear regression, comparison of
+#' allele frequencies, and SNP correlations.
 #'
 
 #' ## Install libraries
 library(devtools)
 library(magrittr)
 library(ggplot2)
+library(tidyr)
+library(dplyr)
 
 #' Install [snpTools](https://github.com/funkhou9/snpTools/commit/6603afd1db77fb6a93ece38b4a3eeafc7fbc92f2)
 # install_github("funkhou9/snpTools")
@@ -265,3 +269,33 @@ ggplot(allele_frequencies, aes(x = Illumina, y = Affy)) +
     geom_point() +
     labs(x = "Illumina allele frequencies",
          y = "Affymetrix allele frequencies")
+
+#' ### SNP correlations
+#' Plot correlations for all SNPs, plotted against SNP position.
+#'
+#' This plot provides greater information regarding consistancy of genotype
+#' calls across platforms. The X chromosome is excluded.
+snp_corr <- mapply(function(x, y) cor(x, y, use = "complete.obs"),
+                   as.data.frame(illum_calls),
+                   as.data.frame(affy_calls))
+
+correlations <-
+  tibble("position" = pos_list$SNP60[match(colnames(illum_calls), marker_list$SNP60)],
+         "corr" = snp_corr) %>%
+    separate(col = position,
+             into = c("chr", "pos"),
+             sep = ":",
+             convert = TRUE) %>%
+    filter(chr != "X")
+
+correlations$chr <- as.numeric(correlations$chr)
+
+correlations <- arrange(correlations, chr) %>%
+                  mutate(color = chr %% 2 == 0)
+
+#+ corr_diff, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
+ggplot(correlations, aes(x = seq_along(pos), y = corr, color = color)) +
+  geom_point() +
+  theme(legend.position = "none") +
+  xlab("position") +
+  ylab("correlation")

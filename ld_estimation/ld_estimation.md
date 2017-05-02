@@ -14,10 +14,12 @@ A set of 4 scripts (one for each breed), each one parameterized by PBS array
 to estimate LD of each chromosome separately. The yorkshire script is linked
 above.
 
-[**3-process_ld.R**](./scripts/3-process_ld_literate/3-process_ld.md)
+[**3-process_ld_1kb.R**](./scripts/3-process_ld_1kb.R)
 Once LD is estimated for all pairwise combinations of SNPs, whose distances are
 less than 50KB (scripts 2a-2d), mean and sd LD estimates are calculated for 1KB
-windows from 0KB to 50KB.
+windows from 0KB to 50KB. This script is parameterized by PBS Array and has no
+literate document.
 
 [**4-visualize_global_ld.R**](./scripts/4-visualize_global_ld_literate/4-visualize_global_ld.md)
-Plotting estimates obtained in `3-process_ld.R`
+Plotting estimates obtained in `3-process_ld_1kb.R` to visualize global patterns
+of short range (0-50KB) LD.

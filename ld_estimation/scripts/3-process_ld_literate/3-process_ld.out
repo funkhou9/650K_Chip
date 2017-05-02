@@ -1,99 +1,0 @@
-
-
-processing file: 3-process_ld.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |....                                                             |   7%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  13%
-label: unnamed-chunk-1
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-2
-  |                                                                         |......................                                           |  33%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-3
-  |                                                                         |..............................                                   |  47%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  53%
-label: unnamed-chunk-4
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |...........................................                      |  67%
-label: unnamed-chunk-5
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-6
-  |                                                                         |........................................................         |  87%
-  ordinary text without R code
-
-  |                                                                         |.............................................................    |  93%
-label: unnamed-chunk-7
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: 3-process_ld.md
-
-Job Id: 40777696.mgr-04.i
-    Job_Name = 3-process_ld
-    Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 01:01:09
-    resources_used.energy_used = 0
-    resources_used.mem = 58747260kb
-    resources_used.vmem = 59222856kb
-    resources_used.walltime = 01:03:27
-    job_state = R
-    queue = main_large
-    server = mgr-04.i
-    Checkpoint = u
-    ctime = Thu Mar 30 23:05:03 2017
-    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
-	scripts/3-process_ld_literate/3-process_ld.out
-    exec_host = lac-309/0
-    Hold_Types = n
-    Join_Path = oe
-    Keep_Files = n
-    Mail_Points = abe
-    mtime = Thu Mar 30 23:05:59 2017
-    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
-	/scripts/3-process_ld_literate/3-process_ld.out
-    Priority = 0
-    qtime = Thu Mar 30 23:05:55 2017
-    Rerunable = False
-    Resource_List.mem = 150gb
-    Resource_List.nodect = 1
-    Resource_List.nodes = 1:ppn=1:intel16
-    Resource_List.walltime = 02:00:00
-    session_id = 20197
-    Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
-	PBS_O_LOGNAME=funkhou9,
-	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
-	ols/bin:/opt/software/Stata/13.0:/opt/software/MATLAB/R2014a/bin:/opt/
-	software/Python/2.7.2--GCC-4.4.5/bin:/opt/software/cmake/2.8.5--GCC-4.
-	4.5/bin:/opt/software/OpenMPI/1.4.3--GCC-4.4.5/bin:/usr/lib64/qt-3.3/b
-	in:/opt/software/lmod/bin:/opt/moab/bin:/usr/local/bin:/bin:/usr/bin:/
-	usr/local/sbin:/usr/sbin:/sbin:/usr/local/hpcc/bin:/opt/ibutils/bin:/m
-	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
-	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
-	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/script
-	s,PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
-    euser = funkhou9
-    egroup = gen
-    queue_type = E
-    etime = Thu Mar 30 23:05:03 2017
-    submit_args = base.sh
-    start_time = Thu Mar 30 23:05:59 2017
-    Walltime.Remaining = 3336
-    start_count = 1
-    fault_tolerant = False
-    job_radix = 0
-    submit_host = dev-intel16.i
-
