@@ -1,0 +1,81 @@
+
+
+processing file: 6-tabulate_ld_100kb_bins.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.......                                                          |  11%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  22%
+label: unnamed-chunk-1
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: unnamed-chunk-2
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: unnamed-chunk-4
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: 6-tabulate_ld_100kb_bins.md
+
+Job Id: 42082302.mgr-04.i
+    Job_Name = 6-tabulate_ld_100kb_bins
+    Job_Owner = funkhou9@dev-intel14.i
+    job_state = R
+    queue = main
+    server = mgr-04.i
+    Checkpoint = u
+    ctime = Wed May  3 11:20:05 2017
+    Error_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
+	scripts/6-tabulate_ld_100kb_bins_literate/6-tabulate_ld_100kb_bins.out
+	
+    exec_host = lac-327/27
+    Hold_Types = n
+    Join_Path = oe
+    Keep_Files = n
+    Mail_Points = abe
+    mtime = Wed May  3 11:21:33 2017
+    Output_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
+	/scripts/6-tabulate_ld_100kb_bins_literate/6-tabulate_ld_100kb_bins.ou
+	t
+    Priority = 0
+    qtime = Wed May  3 11:20:05 2017
+    Rerunable = False
+    Resource_List.mem = 5gb
+    Resource_List.nodect = 1
+    Resource_List.nodes = 1:ppn=1:intel16
+    Resource_List.walltime = 00:03:00
+    session_id = 17087
+    Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
+	PBS_O_LOGNAME=funkhou9,
+	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
+	ols/bin:/opt/software/Stata/13.0:/opt/software/MATLAB/R2014a/bin:/opt/
+	software/Python/2.7.2--GCC-4.4.5/bin:/opt/software/cmake/2.8.5--GCC-4.
+	4.5/bin:/opt/software/OpenMPI/1.4.3--GCC-4.4.5/bin:/usr/lib64/qt-3.3/b
+	in:/opt/software/lmod/bin:/opt/moab/bin:/usr/local/bin:/bin:/usr/bin:/
+	usr/local/sbin:/usr/sbin:/sbin:/usr/local/hpcc/bin:/opt/ibutils/bin:/m
+	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
+	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
+	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/script
+	s,PBS_O_HOST=dev-intel14.i,PBS_O_SERVER=mgr-04
+    euser = funkhou9
+    egroup = gen
+    queue_type = E
+    etime = Wed May  3 11:20:05 2017
+    submit_args = base.sh
+    start_time = Wed May  3 11:21:33 2017
+    Walltime.Remaining = 176
+    start_count = 1
+    fault_tolerant = False
+    job_radix = 0
+    submit_host = dev-intel14.i
+

@@ -16,10 +16,17 @@ above.
 
 [**3-process_ld_1kb.R**](./scripts/3-process_ld_1kb.R)
 Once LD is estimated for all pairwise combinations of SNPs, whose distances are
-less than 50KB (scripts 2a-2d), mean and sd LD estimates are calculated for 1KB
+less than 5Mb (scripts 2a-2d), mean and sd LD estimates are calculated for 1KB
 windows from 0KB to 50KB. This script is parameterized by PBS Array and has no
 literate document.
 
 [**4-visualize_global_ld.R**](./scripts/4-visualize_global_ld_literate/4-visualize_global_ld.md)
 Plotting estimates obtained in `3-process_ld_1kb.R` to visualize global patterns
 of short range (0-50KB) LD.
+
+[**5-process_ld_100kb.R**](./scripts/5-process_ld_100kb.R)
+New 100Kb windows around distances of 0.5Mb, 1Mb, and 5Mb are used for mean
+LD calculations.
+
+[**6-tabulate_ld_100kb_bins.R**](./scripts/6-tabulate_ld_100kb_bins_literate/6-tabulate_ld_100kb_bins.md)
+Tabulate estimates obtained in `5-process_ld_100kb.R`.
