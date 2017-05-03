@@ -209,7 +209,7 @@ illum_calls <- geno_60K[, illum_markers[idx]]
 affy_calls <- geno_650K[, affy_markers[idx]]
 ```
 
-Identify markers with at least a 90% call rate in both datasets
+Identify and filter markers with at least a 90% call rate in both datasets
 
 
 ```r
@@ -221,30 +221,26 @@ idx3 <- apply(affy_calls, 2,
               function(x) {
                   sum(!is.na(x)) / length(x) >= 0.9
               })
+illum_calls <- illum_calls[, idx2 & idx3]
+affy_calls <- affy_calls[, idx2 & idx3]
 ```
 
-Identify markers that are unfixed in both datasets (For a single SNP, at
-two animals must have differing conclusive genotype calls)
+Identify and filter markers that have a MAF >= 0.05 in both datasets
 
 
 ```r
 idx4 <- apply(illum_calls, 2,
               function(x) {
-                  length(unique(x[!is.na(x)])) > 1
+                  af <- mean(x, na.rm = TRUE) / 2
+                  af <= 0.95 & af >= 0.05
               })
 idx5 <- apply(affy_calls, 2,
               function(x) {
-                  length(unique(x[!is.na(x)])) > 1
+                af <- mean(x, na.rm = TRUE) / 2
+                af <= 0.95 & af >= 0.05
               })
-```
-
-Keep only SNPs that have sufficient call rate in both datasets and
-that are unfixed in both datasets.
-
-
-```r
-illum_calls <- illum_calls[, idx2 & idx3 & idx4 & idx5]
-affy_calls <- affy_calls[, idx2 & idx3 & idx4 & idx5]
+illum_calls <- illum_calls[, idx4 & idx5]
+affy_calls <- affy_calls[, idx4 & idx5]
 ```
 
 ### Regression
@@ -283,7 +279,7 @@ nrow(results[results$slope == 1 & results$R2 == 1, ])
 ```
 
 ```
-## [1] 2317
+## [1] 2263
 ```
 
 Add 4th column, a logical vector that is `TRUE` if the SNP is currently used
@@ -306,7 +302,7 @@ ggplot(results, aes(x = R2, y = slope, color = GWBC)) +
     geom_point(aes(x = 0, y = 0), size = 10, shape = 1, color = "blue")
 ```
 
-![plot of chunk unnamed-chunk-25](figure/unnamed-chunk-25-1.png)
+![plot of chunk unnamed-chunk-24](figure/unnamed-chunk-24-1.png)
 
 The data suggests that for those SNPs used to compute GWBC, no transformation
 of Affy coding to Illumina coding is needed.
@@ -326,12 +322,12 @@ head(results[round(results$R2, 1) == 1 & round(results$slope, 1) == 0.5, ])
 
 ```
 ##                 intercept     slope        R2  GWBC
-## ALGA0002747  1.000000e+00 0.5000000 1.0000000 FALSE
 ## ALGA0004678  9.855879e-01 0.5044219 0.9808203 FALSE
 ## H3GA0002791  3.947957e-16 0.5000000 1.0000000 FALSE
 ## MARC0082076 -3.242965e-16 0.5000000 1.0000000 FALSE
-## MARC0073315  1.000000e+00 0.5000000 1.0000000 FALSE
 ## ALGA0006547  9.680851e-01 0.5106383 0.9612015  TRUE
+## ASGA0005379  1.000000e+00 0.5000000 1.0000000 FALSE
+## MARC0033050  1.022114e+00 0.4913755 0.9731162 FALSE
 ```
 
 Examples of genotypes for this set of markers:
@@ -342,10 +338,7 @@ table(fits$ALGA0002747$model)
 ```
 
 ```
-##    x
-## y    0  2
-##   1  3  0
-##   2  0 59
+## < table of extent 0 >
 ```
 
 ```r
@@ -392,10 +385,8 @@ head(results[results$R2 < 0.05, ])
 ##             intercept       slope           R2  GWBC
 ## ASGA0096844 0.1080617  0.06232133 0.0121087782 FALSE
 ## ALGA0028021 1.7493809 -0.01188707 0.0004052411 FALSE
-## CASI0009814 1.9166667 -0.41666667 0.0100546976 FALSE
 ## DRGA0008687 0.4154786  0.04480652 0.0032858113 FALSE
 ## DBWU0000685 0.7777778  0.62222222 0.0462536873 FALSE
-## ALGA0081437 0.6379310  0.36206897 0.0071093486 FALSE
 ```
 
 Examples of genotypes for this set of markers:
@@ -440,11 +431,7 @@ table(fits$ALGA0081437$model)
 ```
 
 ```
-##    x
-## y    1  2
-##   0  1 10
-##   1  0 17
-##   2  1 31
+## < table of extent 0 >
 ```
 
 For the **green** points (points that have near -1 slope)
@@ -496,11 +483,7 @@ table(fits$CASI0000302$model)
 ```
 
 ```
-##    x
-## y    0  1  2
-##   0  0  0  1
-##   1  0  3  0
-##   2 56  1  0
+## < table of extent 0 >
 ```
 
 ```r
@@ -527,7 +510,7 @@ ggplot(results, aes(x = intercept, y = slope, color = GWBC)) +
     geom_point(aes(x = 2, y = -1), size = 10, shape = 1, color = "blue")
 ```
 
-![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-1.png)
+![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-1.png)
 
 From each of the **red**, **blue**, and **green** points highlighted in the
 above plot, provide a contingency table of genotype calls.
@@ -541,12 +524,12 @@ head(results[round(results$intercept, 1) == 1 & round(results$slope, 1) == 0.5, 
 
 ```
 ##             intercept     slope        R2  GWBC
-## ALGA0002156 1.0000000 0.5000000 0.4918033 FALSE
-## ALGA0002747 1.0000000 0.5000000 1.0000000 FALSE
 ## ALGA0004678 0.9855879 0.5044219 0.9808203 FALSE
-## MARC0073315 1.0000000 0.5000000 1.0000000 FALSE
 ## ALGA0006547 0.9680851 0.5106383 0.9612015  TRUE
 ## ASGA0005379 1.0000000 0.5000000 1.0000000 FALSE
+## MARC0033050 1.0221141 0.4913755 0.9731162 FALSE
+## ASGA0006216 1.0000000 0.5000000 1.0000000  TRUE
+## ALGA0116887 0.9535759 0.5106650 0.9362192 FALSE
 ```
 
 Examples of genotypes for this set of markers:
@@ -557,10 +540,7 @@ table(fits$ALGA0002747$model)
 ```
 
 ```
-##    x
-## y    0  2
-##   1  3  0
-##   2  0 59
+## < table of extent 0 >
 ```
 
 ```r
@@ -579,10 +559,7 @@ table(fits$MARC0073315$model)
 ```
 
 ```
-##    x
-## y    0  2
-##   1  1  0
-##   2  0 61
+## < table of extent 0 >
 ```
 
 ```r

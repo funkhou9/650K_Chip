@@ -112,7 +112,7 @@ idx <- illum_markers %in% colnames(yorkshireGenoDose) &
 illum_calls <- geno_60K[, illum_markers[idx]]
 affy_calls <- geno_650K[, affy_markers[idx]]
 
-#' Identify markers with at least a 90% call rate in both datasets
+#' Identify and filter markers with at least a 90% call rate in both datasets
 idx2 <- apply(illum_calls, 2,
               function(x) {
                   sum(!is.na(x)) / length(x) >= 0.9
@@ -121,22 +121,22 @@ idx3 <- apply(affy_calls, 2,
               function(x) {
                   sum(!is.na(x)) / length(x) >= 0.9
               })
+illum_calls <- illum_calls[, idx2 & idx3]
+affy_calls <- affy_calls[, idx2 & idx3]
 
-#' Identify markers that are unfixed in both datasets (For a single SNP, at
-#' two animals must have differing conclusive genotype calls)
+#' Identify and filter markers that have a MAF >= 0.05 in both datasets
 idx4 <- apply(illum_calls, 2,
               function(x) {
-                  length(unique(x[!is.na(x)])) > 1
+                  af <- mean(x, na.rm = TRUE) / 2
+                  af <= 0.95 & af >= 0.05
               })
 idx5 <- apply(affy_calls, 2,
               function(x) {
-                  length(unique(x[!is.na(x)])) > 1
+                af <- mean(x, na.rm = TRUE) / 2
+                af <= 0.95 & af >= 0.05
               })
-
-#' Keep only SNPs that have sufficient call rate in both datasets and
-#' that are unfixed in both datasets.
-illum_calls <- illum_calls[, idx2 & idx3 & idx4 & idx5]
-affy_calls <- affy_calls[, idx2 & idx3 & idx4 & idx5]
+illum_calls <- illum_calls[, idx4 & idx5]
+affy_calls <- affy_calls[, idx4 & idx5]
 
 #' ### Regression
 #' Apply regression for the ith column of each datasets. When using

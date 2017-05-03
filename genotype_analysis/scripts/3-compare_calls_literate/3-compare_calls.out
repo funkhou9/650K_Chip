@@ -16,7 +16,7 @@ label: unnamed-chunk-2
 
   |                                                                         |.....                                                            |   7%
 label: unnamed-chunk-3
-  |                                                                         |.....                                                            |   8%
+  |                                                                         |......                                                           |   9%
   ordinary text without R code
 
   |                                                                         |......                                                           |  10%
@@ -26,22 +26,22 @@ label: unnamed-chunk-4
 
   |                                                                         |........                                                         |  12%
 label: unnamed-chunk-5
-  |                                                                         |.........                                                        |  13%
+  |                                                                         |.........                                                        |  14%
   ordinary text without R code
 
-  |                                                                         |.........                                                        |  14%
+  |                                                                         |..........                                                       |  15%
 label: unnamed-chunk-6
   |                                                                         |..........                                                       |  16%
   ordinary text without R code
 
   |                                                                         |...........                                                      |  17%
 label: unnamed-chunk-7
-  |                                                                         |............                                                     |  18%
+  |                                                                         |............                                                     |  19%
   ordinary text without R code
 
-  |                                                                         |.............                                                    |  19%
-label: unnamed-chunk-8
   |                                                                         |.............                                                    |  20%
+label: unnamed-chunk-8
+  |                                                                         |..............                                                   |  21%
   ordinary text without R code
 
   |                                                                         |..............                                                   |  22%
@@ -49,153 +49,148 @@ label: unnamed-chunk-9
   |                                                                         |...............                                                  |  23%
   ordinary text without R code
 
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-10
   |                                                                         |................                                                 |  25%
+label: unnamed-chunk-10
+  |                                                                         |.................                                                |  26%
   ordinary text without R code
 
-  |                                                                         |.................                                                |  27%
+  |                                                                         |..................                                               |  27%
 label: unnamed-chunk-11
   |                                                                         |..................                                               |  28%
   ordinary text without R code
 
-  |                                                                         |...................                                              |  29%
+  |                                                                         |...................                                              |  30%
 label: unnamed-chunk-12
-  |                                                                         |....................                                             |  30%
-  ordinary text without R code
-
   |                                                                         |....................                                             |  31%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  32%
 label: unnamed-chunk-13
-  |                                                                         |.....................                                            |  33%
+  |                                                                         |......................                                           |  33%
   ordinary text without R code
 
-  |                                                                         |......................                                           |  34%
+  |                                                                         |......................                                           |  35%
 label: unnamed-chunk-14
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
   |                                                                         |.......................                                          |  36%
-label: unnamed-chunk-15
+  ordinary text without R code
+
   |                                                                         |........................                                         |  37%
+label: unnamed-chunk-15
+  |                                                                         |.........................                                        |  38%
   ordinary text without R code
 
-  |                                                                         |.........................                                        |  39%
-label: unnamed-chunk-16
   |                                                                         |..........................                                       |  40%
+label: unnamed-chunk-16
+  |                                                                         |..........................                                       |  41%
   ordinary text without R code
 
-  |                                                                         |...........................                                      |  41%
-label: unnamed-chunk-17
   |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
+label: unnamed-chunk-17
   |                                                                         |............................                                     |  43%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
 label: unnamed-chunk-18
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
   |                                                                         |..............................                                   |  46%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  47%
 label: unnamed-chunk-19
-  |                                                                         |...............................                                  |  47%
-  ordinary text without R code
-
   |                                                                         |...............................                                  |  48%
-label: unnamed-chunk-20
+  ordinary text without R code
+
   |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
+label: unnamed-chunk-20
   |                                                                         |.................................                                |  51%
-label: unnamed-chunk-21
+  ordinary text without R code
+
   |                                                                         |..................................                               |  52%
+label: unnamed-chunk-21
+  |                                                                         |...................................                              |  53%
   ordinary text without R code
 
-  |                                                                         |..................................                               |  53%
-label: unnamed-chunk-22
   |                                                                         |...................................                              |  54%
+label: unnamed-chunk-22
+  |                                                                         |....................................                             |  56%
   ordinary text without R code
 
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-23
   |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
+label: unnamed-chunk-23
   |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  59%
 label: unnamed-chunk-24
-  |                                                                         |......................................                           |  59%
-  ordinary text without R code
-
   |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  62%
 label: unnamed-chunk-25
-  |                                                                         |........................................                         |  61%
-  ordinary text without R code
-
   |                                                                         |.........................................                        |  63%
-label: unnamed-chunk-26
+  ordinary text without R code
+
   |                                                                         |..........................................                       |  64%
+label: unnamed-chunk-26
+  |                                                                         |...........................................                      |  65%
   ordinary text without R code
 
-  |                                                                         |..........................................                       |  65%
+  |                                                                         |...........................................                      |  67%
 label: unnamed-chunk-27
-  |                                                                         |...........................................                      |  66%
+  |                                                                         |............................................                     |  68%
   ordinary text without R code
 
-  |                                                                         |............................................                     |  67%
-label: unnamed-chunk-28
   |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  70%
-label: unnamed-chunk-29
-  |                                                                         |..............................................                   |  71%
+label: unnamed-chunk-28
+  |                                                                         |..............................................                   |  70%
   ordinary text without R code
 
   |                                                                         |...............................................                  |  72%
-label: unnamed-chunk-30
-  |                                                                         |................................................                 |  73%
+label: unnamed-chunk-29
+  |                                                                         |...............................................                  |  73%
   ordinary text without R code
 
+  |                                                                         |................................................                 |  74%
+label: unnamed-chunk-30
   |                                                                         |.................................................                |  75%
-label: unnamed-chunk-31
-  |                                                                         |.................................................                |  76%
   ordinary text without R code
 
   |                                                                         |..................................................               |  77%
-label: unnamed-chunk-32
+label: unnamed-chunk-31
   |                                                                         |...................................................              |  78%
   ordinary text without R code
 
+  |                                                                         |...................................................              |  79%
+label: unnamed-chunk-32
   |                                                                         |....................................................             |  80%
-label: unnamed-chunk-33
-  |                                                                         |....................................................             |  81%
   ordinary text without R code
 
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-34
+  |                                                                         |.....................................................            |  81%
+label: unnamed-chunk-33
   |                                                                         |......................................................           |  83%
   ordinary text without R code
 
   |                                                                         |.......................................................          |  84%
-label: unnamed-chunk-35
-  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-34
+  |                                                                         |.......................................................          |  85%
   ordinary text without R code
 
-  |                                                                         |........................................................         |  87%
-label: unnamed-chunk-36
+  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-35
   |                                                                         |.........................................................        |  88%
   ordinary text without R code
 
   |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-37
+label: unnamed-chunk-36
   |                                                                         |...........................................................      |  90%
   ordinary text without R code
 
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-38
+  |                                                                         |...........................................................      |  91%
+label: unnamed-chunk-37
   |                                                                         |............................................................     |  93%
   ordinary text without R code
 
   |                                                                         |.............................................................    |  94%
-label: unnamed-chunk-39
+label: unnamed-chunk-38
   |                                                                         |..............................................................   |  95%
 label: frequency_diff (with options) 
 List of 3
@@ -207,7 +202,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |...............................................................  |  98%
-label: unnamed-chunk-40
+label: unnamed-chunk-39
   |                                                                         |................................................................ |  99%
 label: corr_diff (with options) 
 List of 3
@@ -221,37 +216,37 @@ List of 3
 
 output file: 3-compare_calls.md
 
-Job Id: 42034553.mgr-04.i
+Job Id: 42042453.mgr-04.i
     Job_Name = 3-compare_calls
     Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:01:30
+    resources_used.cput = 00:01:23
     resources_used.energy_used = 0
-    resources_used.mem = 2374720kb
-    resources_used.vmem = 2850404kb
-    resources_used.walltime = 00:01:40
+    resources_used.mem = 2354452kb
+    resources_used.vmem = 2830024kb
+    resources_used.walltime = 00:01:31
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Tue May  2 10:23:08 2017
+    ctime = Tue May  2 16:48:39 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_analy
 	sis/scripts/3-compare_calls_literate/3-compare_calls.out
-    exec_host = lac-329/25
+    exec_host = lac-444/26
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Tue May  2 10:24:58 2017
+    mtime = Tue May  2 16:49:34 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_anal
 	ysis/scripts/3-compare_calls_literate/3-compare_calls.out
     Priority = 0
-    qtime = Tue May  2 10:23:08 2017
+    qtime = Tue May  2 16:48:39 2017
     Rerunable = False
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:20:00
-    session_id = 14043
+    session_id = 13429
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -267,10 +262,10 @@ Job Id: 42034553.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Tue May  2 10:23:08 2017
+    etime = Tue May  2 16:48:39 2017
     submit_args = base.sh
-    start_time = Tue May  2 10:24:58 2017
-    Walltime.Remaining = 1039
+    start_time = Tue May  2 16:49:34 2017
+    Walltime.Remaining = 1033
     start_count = 1
     fault_tolerant = False
     job_radix = 0
