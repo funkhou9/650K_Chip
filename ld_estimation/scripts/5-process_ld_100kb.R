@@ -57,7 +57,7 @@ for (i in c(paste0("0", 1:9), 10:18)) {
 #' 100 KB windows need to be defined, around 0.5Mb, 1Mb, and 5Mb. First establish
 #' breakpoints. Breakpoints are then used to establish windows.
 centers <- c(500000, 1000000, 5000000)
-groups <- lapply(centers, function(x) c(x - 1000, x + 1000))
+groups <- lapply(centers, function(x) c(x - 100000, x + 100000))
 
 #' For each window, find the number of SNP pairs in that window,
 #' calculate mean and sd of r^2. Rename rownames to be the midpoint
