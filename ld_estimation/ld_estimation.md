@@ -30,3 +30,15 @@ LD calculations.
 
 [**6-tabulate_ld_100kb_bins.R**](./scripts/6-tabulate_ld_100kb_bins_literate/6-tabulate_ld_100kb_bins.md)
 Tabulate estimates obtained in `5-process_ld_100kb.R`.
+
+[**7-process_pofphase.R**](./scripts/7-process_pofphase.R)
+PBS Array parameterized script to calculate correlation of phase for breed
+pairs using 1KB windows from 0-50KB.
+
+[**8-process_pofphase_windows.R**](./scripts/8-process_pofphase_windows.R)
+PBS Array parameterized script to calculate correlation of phase for breed
+pairs using specified windows of various sizes.
+
+[**9-visualize_tabulate_correlations.R**](./scripts/9-visualize_tabulate_correlations_literate/9-visualize_tabulate_correlations.md)
+Process results obtained in `7-process_pofphase.R` and `8-process_pofphase_windows.R`
+to create tables and plots for publication.
