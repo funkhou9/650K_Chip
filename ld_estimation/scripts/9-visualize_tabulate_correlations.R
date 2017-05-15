@@ -89,4 +89,4 @@ mean_ld_windows <- cbind("Breeds_Compared" = c(rep("Duroc-Hampshire", 3),
 rownames(mean_ld_windows) <- NULL
 mean_ld_windows <- as.data.frame(mean_ld_windows, stringsAsFactors = FALSE)
 
-knitr::kable(mean_ld_100kb)
+knitr::kable(mean_ld_windows)

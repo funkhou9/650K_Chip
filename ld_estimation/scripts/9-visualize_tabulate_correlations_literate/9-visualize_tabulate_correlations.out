@@ -39,34 +39,34 @@ label: unnamed-chunk-5
 
 output file: 9-visualize_tabulate_correlations.md
 
-Job Id: 42776164.mgr-04.i
+Job Id: 42781712.mgr-04.i
     Job_Name = 9-visualize_tabulate_correlations
     Job_Owner = funkhou9@dev-intel16.i
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Mon May 15 12:00:02 2017
+    ctime = Mon May 15 13:30:42 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
 	scripts/9-visualize_tabulate_correlations_literate/9-visualize_tabulat
 	e_correlations.out
-    exec_host = lac-233/26
+    exec_host = lac-196/2
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Mon May 15 12:00:43 2017
+    mtime = Mon May 15 13:31:39 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
 	/scripts/9-visualize_tabulate_correlations_literate/9-visualize_tabula
 	te_correlations.out
     Priority = 0
-    qtime = Mon May 15 12:00:02 2017
+    qtime = Mon May 15 13:30:42 2017
     Rerunable = False
     Resource_List.mem = 3gb
     Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:10:00
-    session_id = 30345
+    session_id = 27226
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -82,9 +82,9 @@ Job Id: 42776164.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Mon May 15 12:00:02 2017
+    etime = Mon May 15 13:30:42 2017
     submit_args = base.sh
-    start_time = Mon May 15 12:00:43 2017
+    start_time = Mon May 15 13:31:39 2017
     Walltime.Remaining = 596
     start_count = 1
     fault_tolerant = False

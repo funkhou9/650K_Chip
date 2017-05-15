@@ -140,10 +140,29 @@ mean_ld_windows <- cbind("Breeds_Compared" = c(rep("Duroc-Hampshire", 3),
 rownames(mean_ld_windows) <- NULL
 mean_ld_windows <- as.data.frame(mean_ld_windows, stringsAsFactors = FALSE)
 
-knitr::kable(mean_ld_100kb)
+knitr::kable(mean_ld_windows)
 ```
 
-```
-## Error in inherits(x, "list"): object 'mean_ld_100kb' not found
-```
+
+
+|Breeds_Compared     |Distance |prop_opp_sign |corr  |
+|:-------------------|:--------|:-------------|:-----|
+|Duroc-Hampshire     |30000    |0.172         |0.738 |
+|Duroc-Hampshire     |75000    |0.234         |0.651 |
+|Duroc-Hampshire     |950000   |0.39          |0.396 |
+|Duroc-Landrace      |30000    |0.173         |0.74  |
+|Duroc-Landrace      |75000    |0.234         |0.661 |
+|Duroc-Landrace      |950000   |0.393         |0.431 |
+|Duroc-Yorkshire     |30000    |0.174         |0.742 |
+|Duroc-Yorkshire     |75000    |0.233         |0.664 |
+|Duroc-Yorkshire     |950000   |0.39          |0.439 |
+|Hampshire-Landrace  |30000    |0.16          |0.759 |
+|Hampshire-Landrace  |75000    |0.217         |0.681 |
+|Hampshire-Landrace  |950000   |0.376         |0.438 |
+|Hampshire_Yorkshire |30000    |0.151         |0.771 |
+|Hampshire_Yorkshire |75000    |0.206         |0.699 |
+|Hampshire_Yorkshire |950000   |0.356         |0.498 |
+|Landrace-Yorkshire  |30000    |0.125         |0.829 |
+|Landrace-Yorkshire  |75000    |0.169         |0.776 |
+|Landrace-Yorkshire  |950000   |0.318         |0.611 |
 
