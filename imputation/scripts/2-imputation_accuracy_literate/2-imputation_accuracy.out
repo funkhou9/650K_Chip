@@ -1,0 +1,264 @@
+
+
+processing file: 2-imputation_accuracy.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |..                                                               |   3%
+  ordinary text without R code
+
+  |                                                                         |....                                                             |   6%
+label: unnamed-chunk-1
+  |                                                                         |......                                                           |   9%
+  ordinary text without R code
+
+  |                                                                         |........                                                         |  12%
+label: unnamed-chunk-2 (with options) 
+List of 1
+ $ message: logi FALSE
+
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: 'tidyr'
+
+The following object is masked from 'package:magrittr':
+
+    extract
+
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  19%
+label: unnamed-chunk-3
+  |                                                                         |..............                                                   |  22%
+  ordinary text without R code
+
+  |                                                                         |................                                                 |  25%
+label: unnamed-chunk-4
+  |                                                                         |..................                                               |  28%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  31%
+label: unnamed-chunk-5
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+Read 3 items
+  |                                                                         |......................                                           |  34%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  38%
+label: unnamed-chunk-6
+  |                                                                         |..........................                                       |  41%
+  ordinary text without R code
+
+  |                                                                         |............................                                     |  44%
+label: unnamed-chunk-7
+  |                                                                         |..............................                                   |  47%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  50%
+label: unnamed-chunk-8
+  |                                                                         |...................................                              |  53%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  56%
+label: unnamed-chunk-9
+  |                                                                         |.......................................                          |  59%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  62%
+label: unnamed-chunk-10
+  |                                                                         |...........................................                      |  66%
+  ordinary text without R code
+
+  |                                                                         |.............................................                    |  69%
+label: unnamed-chunk-11
+  |                                                                         |...............................................                  |  72%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  75%
+label: unnamed-chunk-12
+  |                                                                         |...................................................              |  78%
+label: unnamed-chunk-13 (with options) 
+List of 1
+ $ warning: logi FALSE
+
+  |                                                                         |.....................................................            |  81%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: unnamed-chunk-14
+  |                                                                         |.........................................................        |  88%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  91%
+label: snp_impute (with options) 
+List of 3
+ $ dpi     : num 300
+ $ dev     : chr "tiff"
+ $ dev.args: language list(tiff = list(compression = "lzw"))
+
+  |                                                                         |.............................................................    |  94%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  97%
+label: unnamed-chunk-15
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: 2-imputation_accuracy.md
+
+There were 50 or more warnings (use warnings() to see the first 50)
+Job Id: 42881624.mgr-04.i
+    Job_Name = 2-imputation_accuracy
+    Job_Owner = funkhou9@dev-intel14.i
+    resources_used.cput = 00:06:19
+    resources_used.energy_used = 0
+    resources_used.mem = 4208816kb
+    resources_used.vmem = 4676196kb
+    resources_used.walltime = 00:06:26
+    job_state = R
+    queue = main
+    server = mgr-04.i
+    Checkpoint = u
+    ctime = Wed May 17 14:03:28 2017
+    Error_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/imputation/scr
+	ipts/2-imputation_accuracy_literate/2-imputation_accuracy.out
+    exec_host = lac-291/17
+    Hold_Types = n
+    Join_Path = oe
+    Keep_Files = n
+    Mail_Points = abe
+    mtime = Wed May 17 14:04:22 2017
+    Output_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/imputation/sc
+	ripts/2-imputation_accuracy_literate/2-imputation_accuracy.out
+    Priority = 0
+    qtime = Wed May 17 14:03:28 2017
+    Rerunable = False
+    Resource_List.nodes = 1:ppn=1:intel16
+    Resource_List.walltime = 00:30:00
+    Resource_List.mem = 10gb
+    Resource_List.nodect = 1
+    session_id = 17128
+    Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
+	PBS_O_LOGNAME=funkhou9,
+	PBS_O_PATH=/usr/bin:/usr/sbin:/opt/software/R/3.2.0--GCC-4.4.5/bin:/o
+	pt/software/powertools/bin:/opt/software/Stata/13.0:/opt/software/MATL
+	AB/R2014a/bin:/opt/software/Python/2.7.2--GCC-4.4.5/bin:/opt/software/
+	cmake/2.8.5--GCC-4.4.5/bin:/opt/software/OpenMPI/1.4.3--GCC-4.4.5/bin:
+	/usr/lib64/qt-3.3/bin:/opt/software/lmod/bin:/opt/moab/bin:/usr/local/
+	bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/hpcc/bin:
+	/opt/ibutils/bin:/mnt/home/funkhou9/Productivity,
+	PBS_O_MAIL=/var/spool/mail/funkhou9,PBS_O_SHELL=/bin/bash,
+	PBS_O_LANG=en_US.UTF-8,
+	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/imputation/scripts,
+	PBS_O_HOST=dev-intel14.i,PBS_O_SERVER=mgr-04
+    euser = funkhou9
+    egroup = gen
+    queue_type = E
+    etime = Wed May 17 14:03:28 2017
+    submit_args = base.sh
+    start_time = Wed May 17 14:04:22 2017
+    Walltime.Remaining = 1366
+    start_count = 1
+    fault_tolerant = False
+    job_radix = 0
+    submit_host = dev-intel14.i
+    init_work_dir = /mnt/research/pigsnp/NSR/650K_Chip/imputation/scripts
+    request_version = 1
+

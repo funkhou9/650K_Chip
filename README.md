@@ -15,3 +15,7 @@ comparisons of genotype calls across genotyping platforms, etc.
 
 [**ld_estimation**](./ld_estimation/ld_estimation.md)
 Phasing of 650K genotypes and LD calculations.
+
+[**imputation**](./imputation/imputation.md)
+Testing imputation accuracy in going from Illumina 60K Beadchip SNPs to
+Affymetrix PigHD SNPs.
