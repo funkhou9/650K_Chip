@@ -10,6 +10,6 @@ PBS Array parameterized script to individually mask Affymetrix-specific
 SNPs on one Yorkshire animal at a time and impute those SNPs using all
 remaining Yorkshire animals.
 
-[**2-PCA.R**](./scripts/2-PCA_literate/2-PCA.md)
+[**2-imputation_accuracy.R**](./scripts/2-imputation_accuracy_literate/2-imputation_accuracy.md)
 Inspect SNP-wise and animal-wise imputation accuracy using data generated
 in `1-run_fimpute.R`
