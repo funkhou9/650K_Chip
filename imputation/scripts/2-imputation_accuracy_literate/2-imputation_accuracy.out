@@ -204,37 +204,37 @@ label: unnamed-chunk-15
 output file: 2-imputation_accuracy.md
 
 There were 50 or more warnings (use warnings() to see the first 50)
-Job Id: 42881624.mgr-04.i
+Job Id: 42885315.mgr-04.i
     Job_Name = 2-imputation_accuracy
     Job_Owner = funkhou9@dev-intel14.i
-    resources_used.cput = 00:06:19
+    resources_used.cput = 00:07:50
     resources_used.energy_used = 0
-    resources_used.mem = 4208816kb
-    resources_used.vmem = 4676196kb
-    resources_used.walltime = 00:06:26
+    resources_used.mem = 4222708kb
+    resources_used.vmem = 4690084kb
+    resources_used.walltime = 00:08:01
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Wed May 17 14:03:28 2017
+    ctime = Wed May 17 16:25:43 2017
     Error_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/imputation/scr
 	ipts/2-imputation_accuracy_literate/2-imputation_accuracy.out
-    exec_host = lac-291/17
+    exec_host = lac-208/6
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Wed May 17 14:04:22 2017
+    mtime = Wed May 17 16:25:57 2017
     Output_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/imputation/sc
 	ripts/2-imputation_accuracy_literate/2-imputation_accuracy.out
     Priority = 0
-    qtime = Wed May 17 14:03:28 2017
+    qtime = Wed May 17 16:25:43 2017
     Rerunable = False
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:30:00
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
-    session_id = 17128
+    session_id = 2592
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/usr/bin:/usr/sbin:/opt/software/R/3.2.0--GCC-4.4.5/bin:/o
@@ -251,10 +251,10 @@ Job Id: 42881624.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Wed May 17 14:03:28 2017
+    etime = Wed May 17 16:25:43 2017
     submit_args = base.sh
-    start_time = Wed May 17 14:04:22 2017
-    Walltime.Remaining = 1366
+    start_time = Wed May 17 16:25:57 2017
+    Walltime.Remaining = 1311
     start_count = 1
     fault_tolerant = False
     job_radix = 0

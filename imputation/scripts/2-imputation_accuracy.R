@@ -131,17 +131,25 @@ correlations <-
 correlations$chr <- as.numeric(correlations$chr)
 
 correlations <- arrange(correlations, chr) %>%
-                  mutate(color = chr %% 2 == 0)
+                  mutate(color = chr %% 2 == 0) %>%
+                  na.omit()
 
 #' ## Visualize
+#' Plot SNP-wise correlations and provide table of animal-wise correlations
 #+ snp_impute, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(correlations, aes(x = seq_along(corr),
                          y = corr,
                          color = color)) +
   geom_point(size = 1.2, alpha = 0.6) +
-  theme(legend.position = "none") +
+  geom_hline(aes(yintercept = mean(corr, na.rm = TRUE))) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 12)) +
+  scale_y_continuous(breaks = c(-0.25, 0.0, 0.25, 0.5, 0.75, 1.0)) +
   xlab("position") +
   ylab("correlation")
+
+knitr::kable(anim_corr)
 
 #' ## Save data
 save(anim_corr, correlations, file = "../output/2-imputation_accuracy.RData")
