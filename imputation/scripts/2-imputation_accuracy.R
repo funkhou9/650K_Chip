@@ -84,7 +84,7 @@ raw_geno <- raw_geno[, colnames(raw_geno) %in% rownames(affy_map)]
 raw_geno <- raw_geno[, snp_info$SNPID]
 
 #' Obtain SNPs shared by both platforms and SNPs unique to the Affymetrix
-matched_pos <- intersect(pos_list$Affy650, pos_list$SNP60)
+matched_pos <- intersect(pos_list$Affy650, pos_list[["GGP-HD"]])
 matched_markers <- marker_list$Affy650[pos_list$Affy650 %in% matched_pos]
 affy_markers <- marker_list$Affy650[!pos_list$Affy650 %in% matched_pos]
 
