@@ -25,8 +25,9 @@ setwd("/mnt/research/pigsnp/NSR/650K_Chip/imputation/scripts")
 
 #' ## Objectives
 #' For each of the 90 animals genotyped on the Affymetrix 650K Chip, mask all
-#' SNPs except those also present on the Illumina SNP60 Beadchip, then run
+#' SNPs except those also present on the Geneseek Genomic Profiler HD, then run
 #' FImpute to obtain imputed genotypes.
+#'
 
 #' ## Install libraries
 library(devtools)
@@ -55,7 +56,7 @@ load("../../snp_inspection/pos_list.RData")
 #' 650K-specific genotypes for the animal corresponding to the current job
 #' number
 yorks <- affy_geno[paste0(array_ids$Yorkshire, ".CEL"), ]
-matched_pos <- intersect(pos_list$Affy650, pos_list$SNP60)
+matched_pos <- intersect(pos_list$Affy650, pos_list[["GGP-HD"]])
 matched_markers <- marker_list$Affy650[pos_list$Affy650 %in% matched_pos]
 yorks[job_num, !(colnames(yorks) %in% matched_markers)] <- NA
 

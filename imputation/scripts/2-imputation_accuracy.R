@@ -38,7 +38,7 @@ snp_info <- read.table("../output/impute_1/fimpute_run/stat_snp.txt",
                        skip = 1,
                        stringsAsFactors = FALSE)
 
-#' Load SNPs and physical positions from both Affy and Illumina platforms
+#' Load SNPs and physical positions from both Affy and Geneseek platforms
 load("../../snp_inspection/pos_list.RData")
 
 #' Load imputed data one at a time. Retain only imputed genotype and convert to
