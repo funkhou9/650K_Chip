@@ -1,0 +1,91 @@
+
+
+processing file: 2-vep_visualize.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |......                                                           |   9%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1
+  |                                                                         |..................                                               |  27%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  36%
+label: unnamed-chunk-2
+  |                                                                         |..............................                                   |  45%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  55%
+label: unnamed-chunk-3
+  |                                                                         |.........................................                        |  64%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-4
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  91%
+label: consequences (with options) 
+List of 3
+ $ dpi     : num 300
+ $ dev     : chr "tiff"
+ $ dev.args: language list(tiff = list(compression = "lzw"))
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: 2-vep_visualize.md
+
+Job Id: 43174970.mgr-04.i
+    Job_Name = 2-vep_visualize
+    Job_Owner = funkhou9@dev-intel16.i
+    job_state = R
+    queue = main
+    server = mgr-04.i
+    Checkpoint = u
+    ctime = Thu May 25 16:38:08 2017
+    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/snp_inspection
+	/scripts/2-vep_visualize_literate/2-vep_visualize.out
+    exec_host = lac-197/21
+    Hold_Types = n
+    Join_Path = oe
+    Keep_Files = n
+    Mail_Points = abe
+    mtime = Thu May 25 16:38:54 2017
+    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/snp_inspectio
+	n/scripts/2-vep_visualize_literate/2-vep_visualize.out
+    Priority = 0
+    qtime = Thu May 25 16:38:08 2017
+    Rerunable = False
+    Resource_List.nodes = 1:ppn=1:intel16
+    Resource_List.walltime = 00:30:00
+    Resource_List.mem = 10gb
+    Resource_List.nodect = 1
+    session_id = 6434
+    Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
+	PBS_O_LOGNAME=funkhou9,
+	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
+	ols/bin:/opt/software/Stata/13.0:/opt/software/MATLAB/R2014a/bin:/opt/
+	software/Python/2.7.2--GCC-4.4.5/bin:/opt/software/cmake/2.8.5--GCC-4.
+	4.5/bin:/opt/software/OpenMPI/1.4.3--GCC-4.4.5/bin:/usr/lib64/qt-3.3/b
+	in:/opt/software/lmod/bin:/opt/moab/bin:/usr/local/bin:/bin:/usr/bin:/
+	usr/local/sbin:/usr/sbin:/sbin:/usr/local/hpcc/bin:/opt/ibutils/bin:/m
+	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
+	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
+	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/snp_inspection/scrip
+	ts,PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
+    euser = funkhou9
+    egroup = gen
+    queue_type = E
+    etime = Thu May 25 16:38:08 2017
+    submit_args = base.sh
+    start_time = Thu May 25 16:38:54 2017
+    Walltime.Remaining = 1766
+    start_count = 1
+    fault_tolerant = False
+    job_radix = 0
+    submit_host = dev-intel16.i
+    init_work_dir = /mnt/research/pigsnp/NSR/650K_Chip/snp_inspection/scripts
+    request_version = 1
+
