@@ -212,11 +212,21 @@ pos_list <- list("SNP60" = snp60_pos,
 				 "GGP-LD" = ggpld_pos)
 ```
 
+Save marker names for each platform as well. Note that `ggphd_map` does
+not contain marker names.
+
+
+```r
+marker_list <- list("SNP60" = rownames(snp60_map),
+					"Affy650" = as.character(affy_map$Probe.Set.ID),
+					"GGP-LD" = rownames(org_LowD_chip))
+```
+
 #### Save physical positions
 
 
 ```r
-save(pos_list, file = "../pos_list.RData")
+save(pos_list, marker_list, file = "../pos_list.RData")
 ```
 
 Plot venn diagram to visualize overlap between all 4 platforms
@@ -235,7 +245,7 @@ plot.new()
 grid.draw(venn)
 ```
 
-![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
+![plot of chunk mapcompare](figure/mapcompare-1.tiff)
 
 ### Objective Three
 Manipulate data from `affy_map` to prepare input for Variant Effect Predictor

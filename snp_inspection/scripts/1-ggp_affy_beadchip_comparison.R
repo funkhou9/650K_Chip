@@ -131,6 +131,7 @@ marker_list <- list("SNP60" = rownames(snp60_map),
 save(pos_list, marker_list, file = "../pos_list.RData")
 
 #' Plot venn diagram to visualize overlap between all 4 platforms
+#+ mapcompare, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 venn <- venn.diagram(pos_list,
 					 filename = NULL,
 					 fill = c("red", "blue", "green", "yellow"),
