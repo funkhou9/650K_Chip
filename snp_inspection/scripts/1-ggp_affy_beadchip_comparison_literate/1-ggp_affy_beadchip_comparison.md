@@ -42,7 +42,7 @@ on the GGP-HD, GGP-LD, and Porcine SNP60 by position.
 1. Determine if "KIT SNPs" and "GGP-HD KIT SNPs" are all present on the Affy 650K chip.
 2. Determine overlap of SNPs between GGP-HD, GGP-LD, SNP60, and Affy650 using physical position.
 3. Use [Variant Effect Predictor](http://www.ensembl.org/info/docs/tools/vep/index.html)
-to annotate Affy650K Chip. Save VEP results to where raw 650K data is stored:
+to annotate Affy650 Chip. Save VEP results to where raw 650K data is stored:
 `/mnt/research/pigsnp/raw_data/affymetrix_hd/`
 
 ## Install libraries
@@ -233,14 +233,17 @@ Plot venn diagram to visualize overlap between all 4 platforms
 
 
 ```r
-venn <- venn.diagram(pos_list,
-					 filename = NULL,
-					 fill = c("red", "blue", "green", "yellow"),
-					 alpha = 0.6,
-					 cat.fontfamily = "Helvetica",
-					 fontfamily = "Helvetica",
-					 cat.cex = 2,
-					 cex = 1.8)
+venn <- venn.diagram(x = list("SNP60" = pos_list[[1]],
+                              "PigHD" = pos_list[[2]],
+										          "GGP-HD" = pos_list[[3]],
+										          "GGP-LD" = pos_list[[4]]),
+					           filename = NULL,
+					           fill = c("red", "blue", "green", "yellow"),
+					           alpha = 0.6,
+					           cat.fontfamily = "Helvetica",
+					           fontfamily = "Helvetica",
+					           cat.cex = 2,
+					           cex = 1.8)
 plot.new()
 grid.draw(venn)
 ```
