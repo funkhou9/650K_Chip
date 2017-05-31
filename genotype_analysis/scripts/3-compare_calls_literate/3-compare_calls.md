@@ -764,7 +764,10 @@ correlations <- arrange(correlations, chr) %>%
 ```r
 ggplot(correlations, aes(x = seq_along(pos), y = corr, color = color)) +
   geom_point() +
-  theme(legend.position = "none") +
+  geom_hline(aes(yintercept = mean(corr))) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 12)) +
   xlab("position") +
   ylab("correlation")
 ```

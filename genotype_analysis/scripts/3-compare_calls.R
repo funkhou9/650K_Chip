@@ -296,6 +296,9 @@ correlations <- arrange(correlations, chr) %>%
 #+ corr_diff, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(correlations, aes(x = seq_along(pos), y = corr, color = color)) +
   geom_point() +
-  theme(legend.position = "none") +
+  geom_hline(aes(yintercept = mean(corr))) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 12)) +
   xlab("position") +
   ylab("correlation")
