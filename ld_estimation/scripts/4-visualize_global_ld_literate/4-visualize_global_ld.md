@@ -96,3 +96,44 @@ ggplot(ld_means, aes(x = distance, y = LD, color = Breed)) +
 
 ![plot of chunk global_ld](figure/global_ld-1.tiff)
 
+Print the maximum LD for each breed
+
+
+```r
+ld_means %>%
+  group_by(Breed) %>%
+  summarize(max(LD))
+```
+
+```
+## # A tibble: 4 × 2
+##       Breed `max(LD)`
+##       <chr>     <dbl>
+## 1     Duroc 0.7481810
+## 2 Hampshire 0.7370145
+## 3  Landrace 0.6702474
+## 4 Yorkshire 0.6679377
+```
+
+Obtain differences between each breed, for each window, then print the average
+distance
+
+
+```r
+york <-
+  ld_means %>%
+    filter(Breed == "Yorkshire") %>%
+    select(LD)
+
+duroc <-
+  ld_means %>%
+    filter(Breed == "Duroc") %>%
+    select(LD)
+
+abs(mean(unlist(york - duroc)))
+```
+
+```
+## [1] 0.08390722
+```
+

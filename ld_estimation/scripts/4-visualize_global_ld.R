@@ -49,3 +49,22 @@ ggplot(ld_means, aes(x = distance, y = LD, color = Breed)) +
          y = expression(Average~r^2)) +
     theme(axis.text.x = element_text(size = 13),
           axis.text.y = element_text(size = 13))
+
+#' Print the maximum LD for each breed
+ld_means %>%
+  group_by(Breed) %>%
+  summarize(max(LD))
+
+#' Obtain differences between each breed, for each window, then print the average
+#' distance
+york <-
+  ld_means %>%
+    filter(Breed == "Yorkshire") %>%
+    select(LD)
+
+duroc <-
+  ld_means %>%
+    filter(Breed == "Duroc") %>%
+    select(LD)
+
+abs(mean(unlist(york - duroc)))

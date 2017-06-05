@@ -1,63 +1,73 @@
 
 
 processing file: 4-visualize_global_ld.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.......                                                          |  11%
+  |                                                                         |                                                                 |   0%  |                                                                         |.....                                                            |   8%
   ordinary text without R code
 
-  |                                                                         |..............                                                   |  22%
+  |                                                                         |..........                                                       |  15%
 label: unnamed-chunk-1
-  |                                                                         |......................                                           |  33%
+  |                                                                         |...............                                                  |  23%
   ordinary text without R code
 
-  |                                                                         |.............................                                    |  44%
+  |                                                                         |....................                                             |  31%
 label: unnamed-chunk-2
-  |                                                                         |....................................                             |  56%
+  |                                                                         |.........................                                        |  38%
   ordinary text without R code
 
-  |                                                                         |...........................................                      |  67%
+  |                                                                         |..............................                                   |  46%
 label: unnamed-chunk-3
-  |                                                                         |...................................................              |  78%
+  |                                                                         |...................................                              |  54%
   ordinary text without R code
 
-  |                                                                         |..........................................................       |  89%
+  |                                                                         |........................................                         |  62%
 label: global_ld (with options) 
 List of 3
  $ dpi     : num 300
  $ dev     : chr "tiff"
  $ dev.args: language list(tiff = list(compression = "lzw"))
 
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+  |                                                                         |..................................................               |  77%
+label: unnamed-chunk-4
+  |                                                                         |.......................................................          |  85%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  92%
+label: unnamed-chunk-5
   |                                                                         |.................................................................| 100%
   ordinary text without R code
 
 
 output file: 4-visualize_global_ld.md
 
-Job Id: 40837086.mgr-04.i
+Job Id: 43441525.mgr-04.i
     Job_Name = 4-visualize_global_ld
     Job_Owner = funkhou9@dev-intel16.i
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Mon Apr  3 16:30:26 2017
+    ctime = Fri Jun  2 16:35:44 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
 	scripts/4-visualize_global_ld_literate/4-visualize_global_ld.out
-    exec_host = lac-085/5
+    exec_host = lac-196/20
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Mon Apr  3 16:31:20 2017
+    mtime = Fri Jun  2 16:36:40 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
 	/scripts/4-visualize_global_ld_literate/4-visualize_global_ld.out
     Priority = 0
-    qtime = Mon Apr  3 16:30:26 2017
+    qtime = Fri Jun  2 16:35:44 2017
     Rerunable = False
-    Resource_List.mem = 8gb
-    Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:10:00
-    session_id = 19499
+    Resource_List.mem = 10gb
+    Resource_List.nodect = 1
+    session_id = 0
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -73,12 +83,14 @@ Job Id: 40837086.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Mon Apr  3 16:30:26 2017
+    etime = Fri Jun  2 16:35:44 2017
     submit_args = base.sh
-    start_time = Mon Apr  3 16:31:20 2017
-    Walltime.Remaining = 595
+    start_time = Fri Jun  2 16:36:40 2017
+    Walltime.Remaining = 593
     start_count = 1
     fault_tolerant = False
     job_radix = 0
     submit_host = dev-intel16.i
+    init_work_dir = /mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/scripts
+    request_version = 1
 
