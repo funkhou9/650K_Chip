@@ -27,34 +27,34 @@ label: unnamed-chunk-4
 
 output file: 6-tabulate_ld_100kb_bins.md
 
-Job Id: 42340965.mgr-04.i
+Job Id: 43440090.mgr-04.i
     Job_Name = 6-tabulate_ld_100kb_bins
-    Job_Owner = funkhou9@dev-intel14.i
+    Job_Owner = funkhou9@dev-intel16.i
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Mon May  8 12:40:14 2017
-    Error_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
+    ctime = Fri Jun  2 15:55:05 2017
+    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/
 	scripts/6-tabulate_ld_100kb_bins_literate/6-tabulate_ld_100kb_bins.out
 	
-    exec_host = lac-013/25
+    exec_host = lac-292/24
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Mon May  8 12:41:09 2017
-    Output_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
+    mtime = Fri Jun  2 15:55:32 2017
+    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation
 	/scripts/6-tabulate_ld_100kb_bins_literate/6-tabulate_ld_100kb_bins.ou
 	t
     Priority = 0
-    qtime = Mon May  8 12:40:14 2017
+    qtime = Fri Jun  2 15:55:05 2017
     Rerunable = False
-    Resource_List.mem = 2gb
-    Resource_List.nodect = 1
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:05:00
-    session_id = 13792
+    Resource_List.mem = 2gb
+    Resource_List.nodect = 1
+    session_id = 1792
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -66,16 +66,18 @@ Job Id: 42340965.mgr-04.i
 	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
 	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
 	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/script
-	s,PBS_O_HOST=dev-intel14.i,PBS_O_SERVER=mgr-04
+	s,PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Mon May  8 12:40:14 2017
+    etime = Fri Jun  2 15:55:05 2017
     submit_args = base.sh
-    start_time = Mon May  8 12:41:09 2017
-    Walltime.Remaining = 294
+    start_time = Fri Jun  2 15:55:32 2017
+    Walltime.Remaining = 296
     start_count = 1
     fault_tolerant = False
     job_radix = 0
-    submit_host = dev-intel14.i
+    submit_host = dev-intel16.i
+    init_work_dir = /mnt/research/pigsnp/NSR/650K_Chip/ld_estimation/scripts
+    request_version = 1
 
