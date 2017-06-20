@@ -216,37 +216,37 @@ List of 3
 
 output file: 3-compare_calls.md
 
-Job Id: 43339015.mgr-04.i
+Job Id: 44055029.mgr-04.i
     Job_Name = 3-compare_calls
     Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:02:09
+    resources_used.cput = 00:01:26
     resources_used.energy_used = 0
-    resources_used.mem = 3012676kb
-    resources_used.vmem = 3484288kb
-    resources_used.walltime = 00:02:22
+    resources_used.mem = 2670060kb
+    resources_used.vmem = 3141752kb
+    resources_used.walltime = 00:01:32
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Tue May 30 17:04:26 2017
+    ctime = Tue Jun 20 17:00:32 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_analy
 	sis/scripts/3-compare_calls_literate/3-compare_calls.out
-    exec_host = lac-290/26
+    exec_host = lac-042/14
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Tue May 30 17:05:47 2017
+    mtime = Tue Jun 20 17:00:57 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/genotype_anal
 	ysis/scripts/3-compare_calls_literate/3-compare_calls.out
     Priority = 0
-    qtime = Tue May 30 17:04:26 2017
+    qtime = Tue Jun 20 17:00:32 2017
     Rerunable = False
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:30:00
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
-    session_id = 30223
+    session_id = 20040
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -262,10 +262,10 @@ Job Id: 43339015.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Tue May 30 17:04:26 2017
+    etime = Tue Jun 20 17:00:32 2017
     submit_args = base.sh
-    start_time = Tue May 30 17:05:47 2017
-    Walltime.Remaining = 1630
+    start_time = Tue Jun 20 17:00:57 2017
+    Walltime.Remaining = 1654
     start_count = 1
     fault_tolerant = False
     job_radix = 0

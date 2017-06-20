@@ -757,7 +757,7 @@ correlations <-
 
 correlations$chr <- as.numeric(correlations$chr)
 
-correlations <- arrange(correlations, chr) %>%
+correlations <- arrange(correlations, chr, pos) %>%
                   mutate(color = chr %% 2 == 0)
 ```
 
@@ -768,8 +768,8 @@ ggplot(correlations, aes(x = seq_along(pos), y = corr, color = color)) +
   theme(legend.position = "none",
         axis.text.x = element_text(size = 12),
         axis.text.y = element_text(size = 12)) +
-  xlab("position") +
-  ylab("correlation")
+  xlab("Position") +
+  ylab("Correlation")
 ```
 
 ![plot of chunk corr_diff](figure/corr_diff-1.tiff)
