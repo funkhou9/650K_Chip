@@ -211,37 +211,37 @@ label: unnamed-chunk-15
 output file: 2-imputation_accuracy.md
 
 There were 50 or more warnings (use warnings() to see the first 50)
-Job Id: 44030850.mgr-04.i
+Job Id: 44053563.mgr-04.i
     Job_Name = 2-imputation_accuracy
-    Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:08:17
+    Job_Owner = funkhou9@dev-intel14.i
+    resources_used.cput = 00:09:00
     resources_used.energy_used = 0
-    resources_used.mem = 4187228kb
-    resources_used.vmem = 4654616kb
-    resources_used.walltime = 00:08:40
+    resources_used.mem = 4388288kb
+    resources_used.vmem = 4867956kb
+    resources_used.walltime = 00:09:24
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Mon Jun 19 19:00:35 2017
-    Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/imputation/scr
+    ctime = Tue Jun 20 15:34:47 2017
+    Error_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/imputation/scr
 	ipts/2-imputation_accuracy_literate/2-imputation_accuracy.out
-    exec_host = lac-292/11
+    exec_host = lac-355/2
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Mon Jun 19 19:00:58 2017
-    Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/imputation/sc
+    mtime = Tue Jun 20 15:35:57 2017
+    Output_Path = dev-intel14:/mnt/research/pigsnp/NSR/650K_Chip/imputation/sc
 	ripts/2-imputation_accuracy_literate/2-imputation_accuracy.out
     Priority = 0
-    qtime = Mon Jun 19 19:00:35 2017
+    qtime = Tue Jun 20 15:34:47 2017
     Rerunable = False
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:30:00
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
-    session_id = 6158
+    session_id = 27955
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -253,18 +253,18 @@ Job Id: 44030850.mgr-04.i
 	nt/home/funkhou9/Productivity,PBS_O_MAIL=/var/spool/mail/funkhou9,
 	PBS_O_SHELL=/bin/bash,PBS_O_LANG=en_US.UTF-8,
 	PBS_O_WORKDIR=/mnt/research/pigsnp/NSR/650K_Chip/imputation/scripts,
-	PBS_O_HOST=dev-intel16.i,PBS_O_SERVER=mgr-04
+	PBS_O_HOST=dev-intel14.i,PBS_O_SERVER=mgr-04
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Mon Jun 19 19:00:35 2017
+    etime = Tue Jun 20 15:34:47 2017
     submit_args = base.sh
-    start_time = Mon Jun 19 19:00:58 2017
-    Walltime.Remaining = 1268
+    start_time = Tue Jun 20 15:35:57 2017
+    Walltime.Remaining = 1179
     start_count = 1
     fault_tolerant = False
     job_radix = 0
-    submit_host = dev-intel16.i
+    submit_host = dev-intel14.i
     init_work_dir = /mnt/research/pigsnp/NSR/650K_Chip/imputation/scripts
     request_version = 1
 

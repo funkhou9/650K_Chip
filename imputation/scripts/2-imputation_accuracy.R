@@ -131,7 +131,7 @@ accuracies <-
 
 accuracies$chr <- as.numeric(accuracies$chr)
 
-accuracies <- arrange(accuracies, chr) %>%
+accuracies <- arrange(accuracies, chr, pos) %>%
                 mutate(color = chr %% 2 == 0) %>%
                 na.omit()
 
@@ -154,8 +154,8 @@ ggplot(accuracies) +
         axis.text.x = element_text(size = 12),
         axis.text.y = element_text(size = 12)) +
   scale_y_continuous(breaks = c(-0.25, 0.0, 0.25, 0.5, 0.75, 1.0)) +
-  xlab("position") +
-  ylab("imputation accuracy")
+  xlab("Position") +
+  ylab(expression(Imputation~accuracy~R^2))
 
 #+ snp_impute_scaled, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 ggplot(accuracies, aes(x = scaled_pos, y = R2)) +
@@ -165,8 +165,8 @@ ggplot(accuracies, aes(x = scaled_pos, y = R2)) +
         axis.text.x = element_text(size = 12),
         axis.text.y = element_text(size = 12)) +
   scale_y_continuous(breaks = c(-0.25, 0.0, 0.25, 0.5, 0.75, 1.0)) +
-  xlab("scaled position") +
-  ylab("imputation accuracy")
+  xlab("Scaled position") +
+  ylab(expression(Imputation~accuracy~R^2))
 
 knitr::kable(anim_corr)
 
