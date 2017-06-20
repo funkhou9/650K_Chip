@@ -33,7 +33,7 @@ setwd("/mnt/research/pigsnp/NSR/650K_Chip/snp_inspection/scripts")
 #'
 #' Separately from the need to characterize the Affymetrix 650K chip for the purposes of Kit-based
 #' breed probability work, we wish to characterize the SNPs present on the affy by comparing to those
-#' on the GGP-HD, GGP-LD, and Porcine SNP60 by position.
+#' on the GGP-HDv2, GGP-LD, and Porcine SNP60 by position.
 
 #' ## Objectives
 #'
@@ -53,34 +53,39 @@ library(VennDiagram)
 #' ## Load data
 #' Paste in KIT snp information as a data.frame. Information comes from GGP-LD/SNP60 map.
 kit_snps <- data.frame("snp" = c("ALGA0123881",
-					 			 "MARC0034580",
-					 			 "ALGA0102731",
-					 			 "ALGA0115258",
-					 			 "ALGA0047798",
-					 			 "ALGA0047807",
-					 			 "ALGA0047809"),
-					   "chr" = rep(8, 7),
-					   "pos" = c(43068687,
-								 43425758,
-								 43462399,
-								 43651639,
-								 43730377,
-								 43878303,
-								 43916646))
+					 			                 "MARC0034580",
+					 			                 "ALGA0102731",
+					 			                 "ALGA0115258",
+					 			                 "ALGA0047798",
+					 			                 "ALGA0047807",
+					 			                 "ALGA0047809"),
+					             "chr" = rep(8, 7),
+					             "pos" = c(43068687,
+							          	       43425758,
+							          	       43462399,
+							          	       43651639,
+							          	       43730377,
+							          	       43878303,
+							          	       43916646))
 
 #' Read in Affy 650K SNP map
 affy_map <- read.csv("/mnt/research/pigsnp/raw_data/affymetrix_hd/Axiom_PigHD_v1_Annotation.r1.1.csv",
-					 header = TRUE,
-					 comment.char = "#")
+					           header = TRUE,
+					           comment.char = "#",
+					           stringsAsFactors = FALSE)
 
-#' Read in GGP-HD SNP map
-ggphd_map <- read.table("/mnt/research/pigsnp/raw_data/80K_SNP_Map.txt", skip = 1)
+#' Read in GGP-HDv2 SNP map
+ggphd_map <- read.table(paste0("/mnt/research/pigsnp/raw_data/ggp_hdv2/",
+                               "GGP_Porcine_HD_Public_E_StrandReport_FDT.txt"),
+												header = TRUE,
+												stringsAsFactors = FALSE)
 
 #' Read in GGP-LD SNP map, variable name `org_LowD_chip`
 load("/mnt/research/pigsnp/raw_data/SF_working_dir/LowD_chip_maps.RData")
 
 #' Read in Porcine SNP60 map
-snp60_map <- read.table("/mnt/research/pigsnp/raw_data/SF_working_dir/map_updated_commercial.txt")
+snp60_map <- read.table("/mnt/research/pigsnp/raw_data/SF_working_dir/map_updated_commercial.txt",
+                        stringsAsFactors = FALSE)
 
 #' ## Analysis
 #' ### Objective One
@@ -88,44 +93,40 @@ snp60_map <- read.table("/mnt/research/pigsnp/raw_data/SF_working_dir/map_update
 #' different names.
 affy_map[affy_map$Chromosome %in% kit_snps$chr & affy_map$Physical.Position %in% kit_snps$pos, 1:5]
 
-#' What SNPs are present within the KIT SNP range (chr8:43068687-43916646) on the GGP-HD? Answer:
-#' there are 8 SNPs in this region, 3 of which are part of the original BeadChip60 (ALGA0047809,
-#' ALGA0102731, and ALGA0123881)
-ggp_kit <- ggphd_map[ggphd_map[, 3] == 8 &
-				(ggphd_map[, 4] >= 43068687 & ggphd_map[, 4] <= 43916646), ]
+#' What SNPs are present within the KIT SNP range (chr8:43068687-43916646) on the GGP-HD?
+ggp_kit <- ggphd_map[ggphd_map[, 5] == 8 &
+				(ggphd_map[, 6] >= 43068687 & ggphd_map[, 6] <= 43916646), ]
 
 ggp_kit
 
-#' Are these 8 "GGP KIT" SNPs on the affymetrix 650K? Answer: 7 of the 8 GGP KIT SNPs are present on
-#' the Affy 650K
-affy_map[affy_map$Chromosome %in% ggp_kit[, 3] & affy_map$Physical.Position %in% ggp_kit[, 4], 1:5]
+#' Are these "GGP KIT" SNPs on the affymetrix 650K?
+affy_map[affy_map$Chromosome %in% ggp_kit[, 5] & affy_map$Physical.Position %in% ggp_kit[, 6], 1:5]
 
 #' ### Objective Two
 #' To compare physical positions across platforms, first combine chromosome and position of each SNP
 #' into a single character (formatted `chr:pos`) which will provide an easier identifyer to work with.
 snp60_pos <- paste(snp60_map$chr,
-	 			   snp60_map$pos,
-	 			   sep = ":")
+	 			           snp60_map$pos,
+	 			           sep = ":")
 affy_pos <- paste(affy_map$Chromosome,
-				  affy_map$Physical.Position,
-				  sep = ":")
-ggphd_pos <- paste(ggphd_map$V3,
-				   ggphd_map$V4,
-				   sep = ":")
+				          affy_map$Physical.Position,
+				          sep = ":")
+ggphd_pos <- paste(ggphd_map$Chr,
+				           ggphd_map$Coord,
+				           sep = ":")
 ggpld_pos <- paste(org_LowD_chip$chr,
-				   org_LowD_chip$pos,
-				   sep = ":")
+				           org_LowD_chip$pos,
+				           sep = ":")
 
 pos_list <- list("SNP60" = snp60_pos,
-				 "Affy650" = affy_pos,
-				 "GGP-HD" = ggphd_pos,
-				 "GGP-LD" = ggpld_pos)
+				         "Affy650" = affy_pos,
+				         "GGP-HD" = ggphd_pos,
+				         "GGP-LD" = ggpld_pos)
 
-#' Save marker names for each platform as well. Note that `ggphd_map` does
-#' not contain marker names.
+#' Save marker names for each platform as well.
 marker_list <- list("SNP60" = rownames(snp60_map),
-					"Affy650" = as.character(affy_map$Probe.Set.ID),
-					"GGP-LD" = rownames(org_LowD_chip))
+					          "Affy650" = as.character(affy_map$Probe.Set.ID),
+					          "GGP-LD" = rownames(org_LowD_chip))
 
 #' #### Save physical positions
 save(pos_list, marker_list, file = "../pos_list.RData")
@@ -134,7 +135,7 @@ save(pos_list, marker_list, file = "../pos_list.RData")
 #+ mapcompare, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
 venn <- venn.diagram(x = list("SNP60" = pos_list[[1]],
                               "PigHD" = pos_list[[2]],
-										          "GGP-HD" = pos_list[[3]],
+										          "GGP-HDv2" = pos_list[[3]],
 										          "GGP-LD" = pos_list[[4]]),
 					           filename = NULL,
 					           fill = c("red", "blue", "green", "yellow"),
@@ -149,20 +150,20 @@ grid.draw(venn)
 #' ### Objective Three
 #' Manipulate data from `affy_map` to prepare input for Variant Effect Predictor
 affy_vep <- data.frame(affy_map$Chromosome,
-					   affy_map$Physical.Position,
-					   affy_map$Physical.Position,
-					   paste(affy_map$Allele.A, affy_map$Allele.B, sep = '/'),
-					   affy_map$Strand,
-					   affy_map$Affy.SNP.ID)
+					             affy_map$Physical.Position,
+					             affy_map$Physical.Position,
+					             paste(affy_map$Allele.A, affy_map$Allele.B, sep = '/'),
+					             affy_map$Strand,
+					             affy_map$Affy.SNP.ID)
 colnames(affy_vep) <- NULL
 
 #' #### Write VEP input to disk
 write.table(affy_vep,
-			file = "../affy.vep",
-			quote = FALSE,
-			sep = '\t',
-			col.names = FALSE,
-			row.names = FALSE)
+			      file = "../affy.vep",
+			      quote = FALSE,
+			      sep = '\t',
+			      col.names = FALSE,
+			      row.names = FALSE)
 
 #' > Not shown: the resulting file written to disk is used as input for VEP. The assembly used is
 #' > Sscrofa10.2, transcript database used is 'Ensemble transcripts', all identifyers and extra

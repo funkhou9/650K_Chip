@@ -92,34 +92,39 @@ label: unnamed-chunk-15
 
 output file: 1-ggp_affy_beadchip_comparison.md
 
-Job Id: 43338119.mgr-04.i
+Job Id: 44052044.mgr-04.i
     Job_Name = 1-ggp_affy_beadchip_comparison
     Job_Owner = funkhou9@dev-intel16.i
+    resources_used.cput = 00:00:00
+    resources_used.energy_used = 0
+    resources_used.mem = 39620kb
+    resources_used.vmem = 489288kb
+    resources_used.walltime = 00:00:05
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Tue May 30 16:47:48 2017
+    ctime = Tue Jun 20 14:54:38 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/snp_inspection
 	/scripts/1-ggp_affy_beadchip_comparison_literate/1-ggp_affy_beadchip_c
 	omparison.out
-    exec_host = lac-338/2
+    exec_host = lac-329/24
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Tue May 30 16:49:33 2017
+    mtime = Tue Jun 20 14:55:40 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/snp_inspectio
 	n/scripts/1-ggp_affy_beadchip_comparison_literate/1-ggp_affy_beadchip_
 	comparison.out
     Priority = 0
-    qtime = Tue May 30 16:47:48 2017
+    qtime = Tue Jun 20 14:54:38 2017
     Rerunable = False
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:20:00
-    Resource_List.mem = 10gb
+    Resource_List.mem = 8gb
     Resource_List.nodect = 1
-    session_id = 9062
+    session_id = 11805
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -135,10 +140,10 @@ Job Id: 43338119.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Tue May 30 16:47:48 2017
+    etime = Tue Jun 20 14:54:38 2017
     submit_args = base.sh
-    start_time = Tue May 30 16:49:33 2017
-    Walltime.Remaining = 1145
+    start_time = Tue Jun 20 14:55:40 2017
+    Walltime.Remaining = 1155
     start_count = 1
     fault_tolerant = False
     job_radix = 0

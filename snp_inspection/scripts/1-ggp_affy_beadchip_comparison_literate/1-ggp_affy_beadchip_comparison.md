@@ -36,7 +36,7 @@ accuracy, we would need to have animals that are genotyped on all "KIT SNPs" and
 
 Separately from the need to characterize the Affymetrix 650K chip for the purposes of Kit-based
 breed probability work, we wish to characterize the SNPs present on the affy by comparing to those
-on the GGP-HD, GGP-LD, and Porcine SNP60 by position.
+on the GGP-HDv2, GGP-LD, and Porcine SNP60 by position.
 ## Objectives
 
 1. Determine if "KIT SNPs" and "GGP-HD KIT SNPs" are all present on the Affy 650K chip.
@@ -69,20 +69,20 @@ Paste in KIT snp information as a data.frame. Information comes from GGP-LD/SNP6
 
 ```r
 kit_snps <- data.frame("snp" = c("ALGA0123881",
-					 			 "MARC0034580",
-					 			 "ALGA0102731",
-					 			 "ALGA0115258",
-					 			 "ALGA0047798",
-					 			 "ALGA0047807",
-					 			 "ALGA0047809"),
-					   "chr" = rep(8, 7),
-					   "pos" = c(43068687,
-								 43425758,
-								 43462399,
-								 43651639,
-								 43730377,
-								 43878303,
-								 43916646))
+					 			                 "MARC0034580",
+					 			                 "ALGA0102731",
+					 			                 "ALGA0115258",
+					 			                 "ALGA0047798",
+					 			                 "ALGA0047807",
+					 			                 "ALGA0047809"),
+					             "chr" = rep(8, 7),
+					             "pos" = c(43068687,
+							          	       43425758,
+							          	       43462399,
+							          	       43651639,
+							          	       43730377,
+							          	       43878303,
+							          	       43916646))
 ```
 
 Read in Affy 650K SNP map
@@ -90,15 +90,19 @@ Read in Affy 650K SNP map
 
 ```r
 affy_map <- read.csv("/mnt/research/pigsnp/raw_data/affymetrix_hd/Axiom_PigHD_v1_Annotation.r1.1.csv",
-					 header = TRUE,
-					 comment.char = "#")
+					           header = TRUE,
+					           comment.char = "#",
+					           stringsAsFactors = FALSE)
 ```
 
-Read in GGP-HD SNP map
+Read in GGP-HDv2 SNP map
 
 
 ```r
-ggphd_map <- read.table("/mnt/research/pigsnp/raw_data/80K_SNP_Map.txt", skip = 1)
+ggphd_map <- read.table(paste0("/mnt/research/pigsnp/raw_data/ggp_hdv2/",
+                               "GGP_Porcine_HD_Public_E_StrandReport_FDT.txt"),
+												header = TRUE,
+												stringsAsFactors = FALSE)
 ```
 
 Read in GGP-LD SNP map, variable name `org_LowD_chip`
@@ -112,7 +116,8 @@ Read in Porcine SNP60 map
 
 
 ```r
-snp60_map <- read.table("/mnt/research/pigsnp/raw_data/SF_working_dir/map_updated_commercial.txt")
+snp60_map <- read.table("/mnt/research/pigsnp/raw_data/SF_working_dir/map_updated_commercial.txt",
+                        stringsAsFactors = FALSE)
 ```
 
 ## Analysis
@@ -136,54 +141,96 @@ affy_map[affy_map$Chromosome %in% kit_snps$chr & affy_map$Physical.Position %in%
 ## 26108 AX-116345774 Affx-114753388         ---          8          43916646
 ```
 
-What SNPs are present within the KIT SNP range (chr8:43068687-43916646) on the GGP-HD? Answer:
-there are 8 SNPs in this region, 3 of which are part of the original BeadChip60 (ALGA0047809,
-ALGA0102731, and ALGA0123881)
+What SNPs are present within the KIT SNP range (chr8:43068687-43916646) on the GGP-HD?
 
 
 ```r
-ggp_kit <- ggphd_map[ggphd_map[, 3] == 8 &
-				(ggphd_map[, 4] >= 43068687 & ggphd_map[, 4] <= 43916646), ]
+ggp_kit <- ggphd_map[ggphd_map[, 5] == 8 &
+				(ggphd_map[, 6] >= 43068687 & ggphd_map[, 6] <= 43916646), ]
 
 ggp_kit
 ```
 
 ```
-##          V1                 V2 V3       V4     V5    V6  V7  V8 V9
-## 6069   6069        ALGA0047809  8 43916646 0.8160 [T/C] BOT TOP  0
-## 11474 11474        ALGA0102731  8 43462399 0.3624 [A/G] TOP BOT  0
-## 14878 14878        ALGA0123881  8 43068687 0.8646 [T/C] BOT BOT  0
-## 64267 64279 WU_10.2_8_43277756  8 43277756 0.8870 [T/C] BOT TOP  0
-## 64269 64281 WU_10.2_8_43364095  8 43364095 0.7347 [T/C] BOT BOT  0
-## 64270 64282 WU_10.2_8_43545395  8 43545395 0.5629 [A/G] TOP BOT  0
-## 64272 64284 WU_10.2_8_43641500  8 43641500 0.8158 [T/C] BOT TOP  0
-## 64273 64285 WU_10.2_8_43818637  8 43818637 0.0000 [A/G] TOP TOP  0
+##       Index           SNP_Name                              Ilmn_ID Build
+## 541     541     Affx-114629526      Affx-114629526-1_B_F_2353936408  10.2
+## 5195   5195        ALGA0047809         ALGA0047809-0_B_R_2348767067  10.2
+## 11709 11709        ALGA0123881 ALGA0123881_IlmnDup-0_B_F_2354426544  10.2
+## 47809 47809 WU_10.2_8_43277756  WU_10.2_8_43277756-0_B_R_2348821553  10.2
+## 47811 47811 WU_10.2_8_43364095  WU_10.2_8_43364095-0_B_F_2348821555  10.2
+## 47813 47813 WU_10.2_8_43641500  WU_10.2_8_43641500-0_B_R_2348821559  10.2
+##       Chr    Coord
+## 541     8 43651639
+## 5195    8 43916646
+## 11709   8 43068687
+## 47809   8 43277756
+## 47811   8 43364095
+## 47813   8 43641500
+##                                                                                                                                                                                                         Forward_Seq
+## 541   AGGTAGAGGGAAGAGGAGACAAATAGAGAAATGAAGGGAAGTAGAGAAGAGAGAAGAGAACACATTACCACCAGGAGGGCTCTGTGTGCCAGACCAAGAT[T/G]TGTGCTTTGTGCTAATATATTCTTGCAGCTTTAATATTTATTCATTCATTCATTGCTTTTTAGGGCCACGCCTGTAGCATATGGACGTTCCCAGGCTAGG
+## 5195                                                                                  TTTACTGTAATCCTTGTATTATCAATAGTCTTCCTTCAAGTATTTTCCTCCTAACTCAGA[A/G]GGCTTATCTCTGAGTCAGACCTCAGCTGAGCCTGGTATGTTCTACTACTTTAGCTCCGGA
+## 11709                                                                                 TCATTGGCCAATCCGGCTTCAGTCTTCACACTTAGCACGAAAAAGGTGGGGCTTGCATTG[T/C]GATTACACSTGTAGNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+## 47809                                                                                 GCAAAAAGACAGAAAAAAAAAAAAAAAACAACTCTGTTCTATTGGAAACTCAGGGCACCT[A/G]TCCTTTGGTGTGGTCAAAGACAGTGTCTGTCCTCTCACCCACTCTAGGAGGCAACAGCAA
+## 47811                                                                                 GCAGAACTCTGGTTTTGTTAAAGTGGCAGTGCATATAGCCCAGGCGATGATCACCATTGA[T/C]CTAAGCCAGACATGTCAATCTCCTTCCTCTTTACCAGTGATTAATTATGGGCATCTGACC
+## 47813                                                                                 TCCTGTGATATAGTTATTATGAAGTTCATTTAGCCAGATGAAGACYGAGACCTAGAGAAG[A/G]GGTTGAATCCATTTCTATAGGTCACTTAGCAACTAGGTGGTTGATAAGGAATCAAACTTA
+##       Forward_Allele1 Forward_Allele2
+## 541                 T               G
+## 5195                A               G
+## 11709               T               C
+## 47809               A               G
+## 47811               T               C
+## 47813               A               G
+##                                                                                                                                                                                                          Design_Seq
+## 541   AGGTAGAGGGAAGAGGAGACAAATAGAGAAATGAAGGGAAGTAGAGAAGAGAGAAGAGAACACATTACCACCAGGAGGGCTCTGTGTGCCAGACCAAGAT[T/G]TGTGCTTTGTGCTAATATATTCTTGCAGCTTTAATATTTATTCATTCATTCATTGCTTTTTAGGGCCACGCCTGTAGCATATGGACGTTCCCAGGCTAGG
+## 5195                                                                                  TCCGGAGCTAAAGTAGTAGAACATACCAGGCTCAGCTGAGGTCTGACTCAGAGATAAGCC[T/C]TCTGAGTTAGGAGGAAAATACTTGAAGGAAGACTATTGATAATACAAGGATTACAGTAAA
+## 11709                                                                                 TCATTGGCCAATCCGGCTTCAGTCTTCACACTTAGCACGAAAAAGGTGGGGCTTGCATTG[T/C]GATTACACSTGTAGNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+## 47809                                                                                 TTGCTGTTGCCTCCTAGAGTGGGTGAGAGGACAGACACTGTCTTTGACCACACCAAAGGA[T/C]AGGTGCCCTGAGTTTCCAATAGAACAGAGTTGTTTTTTTTTTTTTTTTCTGTCTTTTTGC
+## 47811                                                                                 GCAGAACTCTGGTTTTGTTAAAGTGGCAGTGCATATAGCCCAGGCGATGATCACCATTGA[T/C]CTAAGCCAGACATGTCAATCTCCTTCCTCTTTACCAGTGATTAATTATGGGCATCTGACC
+## 47813                                                                                 TAAGTTTGATTCCTTATCAACCACCTAGTTGCTAAGTGACCTATAGAAATGGATTCAACC[T/C]CTTCTCTAGGTCTCRGTCTTCATCTGGCTAAATGAACTTCATAATAACTATATCACAGGA
+##       Design_Allele1 Design_Allele2
+## 541                T              G
+## 5195               T              C
+## 11709              T              C
+## 47809              T              C
+## 47811              T              C
+## 47813              T              C
+##                                                                                                                                                                                                             Top_Seq
+## 541   CCTAGCCTGGGAACGTCCATATGCTACAGGCGTGGCCCTAAAAAGCAATGAATGAATGAATAAATATTAAAGCTGCAAGAATATATTAGCACAAAGCACA[A/C]ATCTTGGTCTGGCACACAGAGCCCTCCTGGTGGTAATGTGTTCTCTTCTCTCTTCTCTACTTCCCTTCATTTCTCTATTTGTCTCCTCTTCCCTCTACCT
+## 5195                                                                                  TTTACTGTAATCCTTGTATTATCAATAGTCTTCCTTCAAGTATTTTCCTCCTAACTCAGA[A/G]GGCTTATCTCTGAGTCAGACCTCAGCTGAGCCTGGTATGTTCTACTACTTTAGCTCCGGA
+## 11709                                                                                 NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNCTACASGTGTAATC[A/G]CAATGCAAGCCCCACCTTTTTCGTGCTAAGTGTGAAGACTGAAGCCGGATTGGCCAATGA
+## 47809                                                                                 GCAAAAAGACAGAAAAAAAAAAAAAAAACAACTCTGTTCTATTGGAAACTCAGGGCACCT[A/G]TCCTTTGGTGTGGTCAAAGACAGTGTCTGTCCTCTCACCCACTCTAGGAGGCAACAGCAA
+## 47811                                                                                 GGTCAGATGCCCATAATTAATCACTGGTAAAGAGGAAGGAGATTGACATGTCTGGCTTAG[A/G]TCAATGGTGATCATCGCCTGGGCTATATGCACTGCCACTTTAACAAAACCAGAGTTCTGC
+## 47813                                                                                 TCCTGTGATATAGTTATTATGAAGTTCATTTAGCCAGATGAAGACYGAGACCTAGAGAAG[A/G]GGTTGAATCCATTTCTATAGGTCACTTAGCAACTAGGTGGTTGATAAGGAATCAAACTTA
+##       Top_AlleleA Top_AlleleB
+## 541             A           C
+## 5195            A           G
+## 11709           A           G
+## 47809           A           G
+## 47811           A           G
+## 47813           A           G
 ```
 
-Are these 8 "GGP KIT" SNPs on the affymetrix 650K? Answer: 7 of the 8 GGP KIT SNPs are present on
-the Affy 650K
+Are these "GGP KIT" SNPs on the affymetrix 650K?
 
 
 ```r
-affy_map[affy_map$Chromosome %in% ggp_kit[, 3] & affy_map$Physical.Position %in% ggp_kit[, 4], 1:5]
+affy_map[affy_map$Chromosome %in% ggp_kit[, 5] & affy_map$Physical.Position %in% ggp_kit[, 6], 1:5]
 ```
 
 ```
 ##        Probe.Set.ID    Affy.SNP.ID dbSNP.RS.ID Chromosome
 ## 26100  AX-116691049 Affx-114940851         ---          8
-## 26103  AX-116345663 Affx-115223271         ---          8
+## 26104  AX-116345697 Affx-114629526         ---          8
 ## 26108  AX-116345774 Affx-114753388         ---          8
 ## 95509  AX-116736314 Affx-114850107         ---          8
 ## 95513  AX-116345643 Affx-114992210         ---          8
-## 161054 AX-116345747 Affx-114935317         ---          8
 ## 555768 AX-116345695 Affx-114958854         ---          8
 ##        Physical.Position
 ## 26100           43068687
-## 26103           43462399
+## 26104           43651639
 ## 26108           43916646
 ## 95509           43277756
 ## 95513           43364095
-## 161054          43818637
 ## 555768          43641500
 ```
 
@@ -194,32 +241,31 @@ into a single character (formatted `chr:pos`) which will provide an easier ident
 
 ```r
 snp60_pos <- paste(snp60_map$chr,
-	 			   snp60_map$pos,
-	 			   sep = ":")
+	 			           snp60_map$pos,
+	 			           sep = ":")
 affy_pos <- paste(affy_map$Chromosome,
-				  affy_map$Physical.Position,
-				  sep = ":")
-ggphd_pos <- paste(ggphd_map$V3,
-				   ggphd_map$V4,
-				   sep = ":")
+				          affy_map$Physical.Position,
+				          sep = ":")
+ggphd_pos <- paste(ggphd_map$Chr,
+				           ggphd_map$Coord,
+				           sep = ":")
 ggpld_pos <- paste(org_LowD_chip$chr,
-				   org_LowD_chip$pos,
-				   sep = ":")
+				           org_LowD_chip$pos,
+				           sep = ":")
 
 pos_list <- list("SNP60" = snp60_pos,
-				 "Affy650" = affy_pos,
-				 "GGP-HD" = ggphd_pos,
-				 "GGP-LD" = ggpld_pos)
+				         "Affy650" = affy_pos,
+				         "GGP-HD" = ggphd_pos,
+				         "GGP-LD" = ggpld_pos)
 ```
 
-Save marker names for each platform as well. Note that `ggphd_map` does
-not contain marker names.
+Save marker names for each platform as well.
 
 
 ```r
 marker_list <- list("SNP60" = rownames(snp60_map),
-					"Affy650" = as.character(affy_map$Probe.Set.ID),
-					"GGP-LD" = rownames(org_LowD_chip))
+					          "Affy650" = as.character(affy_map$Probe.Set.ID),
+					          "GGP-LD" = rownames(org_LowD_chip))
 ```
 
 #### Save physical positions
@@ -235,7 +281,7 @@ Plot venn diagram to visualize overlap between all 4 platforms
 ```r
 venn <- venn.diagram(x = list("SNP60" = pos_list[[1]],
                               "PigHD" = pos_list[[2]],
-										          "GGP-HD" = pos_list[[3]],
+										          "GGP-HDv2" = pos_list[[3]],
 										          "GGP-LD" = pos_list[[4]]),
 					           filename = NULL,
 					           fill = c("red", "blue", "green", "yellow"),
@@ -256,11 +302,11 @@ Manipulate data from `affy_map` to prepare input for Variant Effect Predictor
 
 ```r
 affy_vep <- data.frame(affy_map$Chromosome,
-					   affy_map$Physical.Position,
-					   affy_map$Physical.Position,
-					   paste(affy_map$Allele.A, affy_map$Allele.B, sep = '/'),
-					   affy_map$Strand,
-					   affy_map$Affy.SNP.ID)
+					             affy_map$Physical.Position,
+					             affy_map$Physical.Position,
+					             paste(affy_map$Allele.A, affy_map$Allele.B, sep = '/'),
+					             affy_map$Strand,
+					             affy_map$Affy.SNP.ID)
 colnames(affy_vep) <- NULL
 ```
 
@@ -269,11 +315,11 @@ colnames(affy_vep) <- NULL
 
 ```r
 write.table(affy_vep,
-			file = "../affy.vep",
-			quote = FALSE,
-			sep = '\t',
-			col.names = FALSE,
-			row.names = FALSE)
+			      file = "../affy.vep",
+			      quote = FALSE,
+			      sep = '\t',
+			      col.names = FALSE,
+			      row.names = FALSE)
 ```
 
 > Not shown: the resulting file written to disk is used as input for VEP. The assembly used is
