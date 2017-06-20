@@ -107,7 +107,7 @@ ld_means$distance <- ld_means$distance / 1000
 
 ```r
 ggplot(ld_means, aes(x = distance, y = LD, color = Breed)) +
-    geom_line(size = 1, alpha = 0.7) +
+    geom_point(size = 3, alpha = 0.7) +
     labs(x = "Marker distance in kb",
          y = "Correlation of Phase") +
     theme(axis.text.x = element_text(size = 12),
