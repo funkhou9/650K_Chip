@@ -100,56 +100,75 @@ imp_geno_affy[imp_geno_affy == 4] <- 1
 #' Compute animal-wise correlations for all 90 animals. Then snp-wise correlations
 #' for all 479282 SNPs
 anim_corr <- data.frame("animal" = character(),
-                        "correlation" = numeric(),
+                        "R2" = numeric(),
                         stringsAsFactors = FALSE)
 for (i in 1:nrow(raw_geno_affy)) {
   anim_corr[i, ] <- list("animal" = rownames(raw_geno_affy)[i],
-                         "correlation" = cor(imp_geno_affy[i, ],
-                                             raw_geno_affy[i, ],
-                                             use = "complete.obs"))
+                         "R2" = cor(imp_geno_affy[i, ],
+                                    raw_geno_affy[i, ],
+                                    use = "complete.obs")^2)
 }
 
-snp_corr <- c()
+snp_accuracy <- c()
 #+ warning=FALSE
 for (i in 1:ncol(raw_geno_affy)) {
-  snp_corr[i] <- cor(imp_geno_affy[, i],
-                     raw_geno_affy[, i],
-                     use = "complete.obs")
+  snp_accuracy[i] <- cor(imp_geno_affy[, i],
+                         raw_geno_affy[, i],
+                         use = "complete.obs")^2
 }
 
 #' For plotting, append color codes for each SNP. Colors should alternate with
-#' alternating chromosomes.
-correlations <-
+#' alternating chromosomes. Provide both chromosomal position and scaled position
+#' for multiple ways of showing results.
+accuracies <-
   tibble("position" = pos_list$Affy650[match(colnames(raw_geno_affy), marker_list$Affy650)],
-         "corr" = snp_corr) %>%
+         "R2" = snp_accuracy) %>%
     separate(col = position,
              into = c("chr", "pos"),
              sep = ":",
              convert = TRUE) %>%
     filter(chr != "X")
 
-correlations$chr <- as.numeric(correlations$chr)
+accuracies$chr <- as.numeric(accuracies$chr)
 
-correlations <- arrange(correlations, chr) %>%
-                  mutate(color = chr %% 2 == 0) %>%
-                  na.omit()
+accuracies <- arrange(accuracies, chr) %>%
+                mutate(color = chr %% 2 == 0) %>%
+                na.omit()
+
+accuracies <- accuracies %>%
+                group_by(chr) %>%
+                mutate(scaled_pos = seq_along(pos) / length(pos))
 
 #' ## Visualize
-#' Plot SNP-wise correlations and provide table of animal-wise correlations
+#' Plot SNP-wise accuracies two different ways and provide table of
+#' animal-wise accuracies
 #+ snp_impute, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
-ggplot(correlations, aes(x = seq_along(corr),
-                         y = corr,
-                         color = color)) +
-  geom_point(size = 1.2, alpha = 0.6) +
-  geom_hline(aes(yintercept = mean(corr, na.rm = TRUE))) +
+ggplot(accuracies) +
+  geom_point(aes(x = seq_along(R2),
+                 y = R2,
+                 color = color),
+             size = 1.2,
+             alpha = 0.6) +
+  geom_hline(aes(yintercept = mean(R2, na.rm = TRUE))) +
   theme(legend.position = "none",
         axis.text.x = element_text(size = 12),
         axis.text.y = element_text(size = 12)) +
   scale_y_continuous(breaks = c(-0.25, 0.0, 0.25, 0.5, 0.75, 1.0)) +
   xlab("position") +
-  ylab("correlation")
+  ylab("imputation accuracy")
+
+#+ snp_impute_scaled, dpi=300, dev='tiff', dev.args=list(tiff = list(compression = 'lzw'))
+ggplot(accuracies, aes(x = scaled_pos, y = R2)) +
+  geom_point(size = 1.2, alpha = 0.6) +
+  geom_smooth(color = "red") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 12)) +
+  scale_y_continuous(breaks = c(-0.25, 0.0, 0.25, 0.5, 0.75, 1.0)) +
+  xlab("scaled position") +
+  ylab("imputation accuracy")
 
 knitr::kable(anim_corr)
 
 #' ## Save data
-save(anim_corr, correlations, file = "../output/2-imputation_accuracy.RData")
+save(anim_corr, accuracies, file = "../output/2-imputation_accuracy.RData")

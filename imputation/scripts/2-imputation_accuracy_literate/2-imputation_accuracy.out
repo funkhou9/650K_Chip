@@ -32,20 +32,20 @@ The following object is masked from 'package:magrittr':
 
     extract
 
-  |                                                                         |..........                                                       |  16%
+  |                                                                         |..........                                                       |  15%
   ordinary text without R code
 
-  |                                                                         |............                                                     |  19%
+  |                                                                         |............                                                     |  18%
 label: unnamed-chunk-3
-  |                                                                         |..............                                                   |  22%
+  |                                                                         |..............                                                   |  21%
   ordinary text without R code
 
-  |                                                                         |................                                                 |  25%
+  |                                                                         |................                                                 |  24%
 label: unnamed-chunk-4
-  |                                                                         |..................                                               |  28%
+  |                                                                         |..................                                               |  27%
   ordinary text without R code
 
-  |                                                                         |....................                                             |  31%
+  |                                                                         |....................                                             |  30%
 label: unnamed-chunk-5
 Read 3 items
 Read 3 items
@@ -137,56 +137,63 @@ Read 3 items
 Read 3 items
 Read 3 items
 Read 3 items
-  |                                                                         |......................                                           |  34%
+  |                                                                         |......................                                           |  33%
   ordinary text without R code
 
-  |                                                                         |........................                                         |  38%
+  |                                                                         |........................                                         |  36%
 label: unnamed-chunk-6
-  |                                                                         |..........................                                       |  41%
+  |                                                                         |..........................                                       |  39%
   ordinary text without R code
 
-  |                                                                         |............................                                     |  44%
+  |                                                                         |............................                                     |  42%
 label: unnamed-chunk-7
-  |                                                                         |..............................                                   |  47%
+  |                                                                         |..............................                                   |  45%
   ordinary text without R code
 
-  |                                                                         |................................                                 |  50%
+  |                                                                         |................................                                 |  48%
 label: unnamed-chunk-8
-  |                                                                         |...................................                              |  53%
+  |                                                                         |.................................                                |  52%
   ordinary text without R code
 
-  |                                                                         |.....................................                            |  56%
+  |                                                                         |...................................                              |  55%
 label: unnamed-chunk-9
-  |                                                                         |.......................................                          |  59%
+  |                                                                         |.....................................                            |  58%
   ordinary text without R code
 
-  |                                                                         |.........................................                        |  62%
+  |                                                                         |.......................................                          |  61%
 label: unnamed-chunk-10
-  |                                                                         |...........................................                      |  66%
+  |                                                                         |.........................................                        |  64%
   ordinary text without R code
 
-  |                                                                         |.............................................                    |  69%
+  |                                                                         |...........................................                      |  67%
 label: unnamed-chunk-11
-  |                                                                         |...............................................                  |  72%
+  |                                                                         |.............................................                    |  70%
   ordinary text without R code
 
-  |                                                                         |.................................................                |  75%
+  |                                                                         |...............................................                  |  73%
 label: unnamed-chunk-12
-  |                                                                         |...................................................              |  78%
+  |                                                                         |.................................................                |  76%
 label: unnamed-chunk-13 (with options) 
 List of 1
  $ warning: logi FALSE
 
-  |                                                                         |.....................................................            |  81%
+  |                                                                         |...................................................              |  79%
   ordinary text without R code
 
-  |                                                                         |.......................................................          |  84%
+  |                                                                         |.....................................................            |  82%
 label: unnamed-chunk-14
-  |                                                                         |.........................................................        |  88%
+  |                                                                         |.......................................................          |  85%
   ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: snp_impute (with options) 
+List of 3
+ $ dpi     : num 300
+ $ dev     : chr "tiff"
+ $ dev.args: language list(tiff = list(compression = "lzw"))
 
   |                                                                         |...........................................................      |  91%
-label: snp_impute (with options) 
+label: snp_impute_scaled (with options) 
 List of 3
  $ dpi     : num 300
  $ dev     : chr "tiff"
@@ -204,37 +211,37 @@ label: unnamed-chunk-15
 output file: 2-imputation_accuracy.md
 
 There were 50 or more warnings (use warnings() to see the first 50)
-Job Id: 43079891.mgr-04.i
+Job Id: 44030850.mgr-04.i
     Job_Name = 2-imputation_accuracy
     Job_Owner = funkhou9@dev-intel16.i
-    resources_used.cput = 00:08:05
+    resources_used.cput = 00:08:17
     resources_used.energy_used = 0
-    resources_used.mem = 4198460kb
-    resources_used.vmem = 4665836kb
-    resources_used.walltime = 00:08:13
+    resources_used.mem = 4187228kb
+    resources_used.vmem = 4654616kb
+    resources_used.walltime = 00:08:40
     job_state = R
     queue = main
     server = mgr-04.i
     Checkpoint = u
-    ctime = Mon May 22 13:59:05 2017
+    ctime = Mon Jun 19 19:00:35 2017
     Error_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/imputation/scr
 	ipts/2-imputation_accuracy_literate/2-imputation_accuracy.out
-    exec_host = lac-086/26
+    exec_host = lac-292/11
     Hold_Types = n
     Join_Path = oe
     Keep_Files = n
     Mail_Points = abe
-    mtime = Mon May 22 14:00:12 2017
+    mtime = Mon Jun 19 19:00:58 2017
     Output_Path = dev-intel16:/mnt/research/pigsnp/NSR/650K_Chip/imputation/sc
 	ripts/2-imputation_accuracy_literate/2-imputation_accuracy.out
     Priority = 0
-    qtime = Mon May 22 13:59:05 2017
+    qtime = Mon Jun 19 19:00:35 2017
     Rerunable = False
     Resource_List.nodes = 1:ppn=1:intel16
     Resource_List.walltime = 00:30:00
     Resource_List.mem = 10gb
     Resource_List.nodect = 1
-    session_id = 31854
+    session_id = 6158
     Variable_List = PBS_O_QUEUE=main,PBS_O_HOME=/mnt/home/funkhou9,
 	PBS_O_LOGNAME=funkhou9,
 	PBS_O_PATH=/opt/software/R/3.2.0--GCC-4.4.5/bin:/opt/software/powerto
@@ -250,10 +257,10 @@ Job Id: 43079891.mgr-04.i
     euser = funkhou9
     egroup = gen
     queue_type = E
-    etime = Mon May 22 13:59:05 2017
+    etime = Mon Jun 19 19:00:35 2017
     submit_args = base.sh
-    start_time = Mon May 22 14:00:12 2017
-    Walltime.Remaining = 1259
+    start_time = Mon Jun 19 19:00:58 2017
+    Walltime.Remaining = 1268
     start_count = 1
     fault_tolerant = False
     job_radix = 0
