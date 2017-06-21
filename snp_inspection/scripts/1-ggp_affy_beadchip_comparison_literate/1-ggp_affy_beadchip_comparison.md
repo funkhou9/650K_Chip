@@ -237,21 +237,35 @@ affy_map[affy_map$Chromosome %in% ggp_kit[, 5] & affy_map$Physical.Position %in%
 ### Objective Two
 To compare physical positions across platforms, first combine chromosome and position of each SNP
 into a single character (formatted `chr:pos`) which will provide an easier identifyer to work with.
+Remove SNPs with ambiguous positions (chr=0, pos=0)
 
 
 ```r
 snp60_pos <- paste(snp60_map$chr,
 	 			           snp60_map$pos,
 	 			           sep = ":")
+idx <- snp60_pos != "0:0"
+snp60_pos <- snp60_pos[idx]
+snp60_markers <- rownames(snp60_map)[idx]
+
 affy_pos <- paste(affy_map$Chromosome,
 				          affy_map$Physical.Position,
 				          sep = ":")
+idx <- affy_pos != "0:0"
+affy_pos <- affy_pos[idx]
+affy_markers <- as.character(affy_map$Probe.Set.ID)[idx]
+
 ggphd_pos <- paste(ggphd_map$Chr,
 				           ggphd_map$Coord,
 				           sep = ":")
+ggphd_pos <- ggphd_pos[ggphd_pos != "0:0"]
+
 ggpld_pos <- paste(org_LowD_chip$chr,
 				           org_LowD_chip$pos,
 				           sep = ":")
+idx <- ggpld_pos != "0:0"
+ggpld_pos <- ggpld_pos[idx]
+ggpld_markers <- rownames(org_LowD_chip)[idx]
 
 pos_list <- list("SNP60" = snp60_pos,
 				         "Affy650" = affy_pos,
@@ -263,9 +277,9 @@ Save marker names for each platform as well.
 
 
 ```r
-marker_list <- list("SNP60" = rownames(snp60_map),
-					          "Affy650" = as.character(affy_map$Probe.Set.ID),
-					          "GGP-LD" = rownames(org_LowD_chip))
+marker_list <- list("SNP60" = snp60_markers,
+					          "Affy650" = affy_markers,
+					          "GGP-LD" = ggpld_markers)
 ```
 
 #### Save physical positions
